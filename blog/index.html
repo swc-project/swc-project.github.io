@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Blog · swc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Super fast alternative for babel"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Blog · swc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://swc-project.github.io/index.html"/><meta property="og:description" content="Super fast alternative for babel"/><meta property="og:image" content="https://swc-project.github.io/img/swc.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://swc-project.github.io/img/swc.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://swc-project.github.io/blog/atom.xml" title="swc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://swc-project.github.io/blog/feed.xml" title="swc Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-81467907-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="blog"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">swc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/installation" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://opencollective.com/swc" target="_self">Donate</a></li><li class=""><a href="https://github.com/swc-project/swc" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/Introducing-swc-1.0">Introducing swc 1.0</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="posts"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/02/08/Introducing-swc-1.0">Introducing swc 1.0</a></h1><p class="post-meta">February 8, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<h3><a class="anchor" aria-hidden="true" id="what-is-swc"></a><a href="#what-is-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is swc?</h3>
+<p><a href="https://github.com/swc-project/swc">swc</a>(speedy web compiler) is a super-fast javascript to javascript compiler.</p>
+<h3><a class="anchor" aria-hidden="true" id="what-can-swc-do"></a><a href="#what-can-swc-do" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What can swc do?</h3>
+<p>It can transpile typescript / jsx / ecmascript 2019 to browser-compatible javascript.</p>
+<p><code>input.js</code>:</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{
+    set foo(v) { }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Foo</span> </span>{
+    get bar1() {}
+    <span class="hljs-keyword">async</span> bar2() {}
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="how-fast-is-swc"></a><a href="#how-fast-is-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How fast is swc?</h3>
+<p>It's 16x - 20x faster than babel even on single-core synchronous benchmark. Note that actual performance gap is larger because swc works on worker thread while babel works on event loop thread.</p>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>You can install <code>swc</code> with</p>
+<pre><code class="hljs css language-sh">npm install --save-dev @swc/core
+</code></pre>
+<p>or</p>
+<pre><code class="hljs css language-sh">yarn add --dev @swc/core
+</code></pre>
+<p>See <a href="/docs/installation">installation guide</a> for more details.</p>
+<h2><a class="anchor" aria-hidden="true" id="what-is-included-in-swc-100"></a><a href="#what-is-included-in-swc-100" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is included in swc 1.0.0?</h2>
+<p>Swc implements almost all babel plugins. As of 1.0.0, swc can understand various dialects of ecmascript and compiles them into es5.</p>
+<h3><a class="anchor" aria-hidden="true" id="ecmascript-2019-support"></a><a href="#ecmascript-2019-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECMAScript 2019 support</h3>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"ecmascript"</span>
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="react-with-jsx"></a><a href="#react-with-jsx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React (with jsx)</h3>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"ecmascript"</span>,
+      <span class="hljs-attr">"jsx"</span>: <span class="hljs-literal">true</span>
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="typescript-support"></a><a href="#typescript-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript support</h3>
+<p>Swc can also compile typescript / tsx to ecmascript. Note that it does not type-check at the time of writing. Type checking is tracked at <a href="https://github.com/swc-project/swc/issues/126">#126</a>.</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"typescript"</span>,
+      <span class="hljs-attr">"tsx"</span>: <span class="hljs-literal">false</span>
+    }
+  }
+}
+</code></pre>
+<p>See <a href="/docs/configuring-swc">docs</a> for more details.</p>
+<h3><a class="anchor" aria-hidden="true" id="various-transforms"></a><a href="#various-transforms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Various transforms</h3>
+<ul>
+<li><p>es3</p>
+<ul>
+<li>member-expression-literals</li>
+<li>property-literals</li>
+<li>reserved-words</li>
+</ul></li>
+<li><p>es2015</p>
+<ul>
+<li>arrow-functions</li>
+<li>block-scoped-functions</li>
+<li>block-scoping</li>
+<li>classes</li>
+<li>computed-properties</li>
+<li>destructuring</li>
+<li>duplicate-keys</li>
+<li>for-of</li>
+<li>function-name</li>
+<li>instanceof</li>
+<li>literals</li>
+<li>new-target</li>
+<li>parameters</li>
+<li>shorthand-properties</li>
+<li>spread</li>
+<li>sticky regex (<code>y</code> flag)</li>
+<li>template-literals</li>
+<li>typeof-symbol</li>
+</ul></li>
+<li><p>es2016</p>
+<ul>
+<li>exponentiation-operator</li>
+</ul></li>
+<li><p>es2017</p>
+<ul>
+<li>async-to-generator</li>
+</ul></li>
+<li><p>es2018</p>
+<ul>
+<li>object-rest-spread</li>
+</ul></li>
+<li><p>react</p>
+<ul>
+<li>jsx</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="migrating-from-babel"></a><a href="#migrating-from-babel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Migrating from babel</h2>
+<h3><a class="anchor" aria-hidden="true" id="babel-core"></a><a href="#babel-core" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@babel/core</h3>
+<p>Run <code>npm i --save-dev @swc/core</code> or <code>yarn add --dev @swc/core</code>.</p>
+<p>Swc enables all passes by default. So if you are using only standartd ecmascript, you can just delete <code>.babelrc</code> and change <code>babel.transform()</code> to <code>swc.transform()</code>.</p>
+<p>See <a href="/docs/usage-core">usage docs</a> and <a href="/docs/migrating-from-babel-core">migration docs</a> for more details.
+Also note that swc does not support custom plugin yet.</p>
+<h3><a class="anchor" aria-hidden="true" id="babel-cli"></a><a href="#babel-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@babel/cli</h3>
+<p>Run <code>npm i --save-dev @swc/core @swc/cli</code> or <code>yarn add --dev @swc/core @swc/cli</code> to install. CLI apis of <code>@swc/cli</code> is almost equivalent to it of <code>@babel/cli</code>. So if you are using standartd ecmascript, you can just replace <code>npx babel</code> to <code>npx swc</code>. If it results in an error, please <a href="https://github.com/swc-project/swc/issues">report an error</a>.</p>
+<p>See <a href="/docs/usage-cli">usage docs</a> and <a href="/docs/migrating-from-babel-cli">migration docs</a> for more details. Also note that swc does not support custom plugin yet.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://raw.githubusercontent.com/swc-project/logo/master/swc-without-extra.png" alt="swc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Installation</a><a href="/docs/configuring-swc.html">Configuring swc</a><a href="/docs/usage-cli.html">Usage</a><a href="/docs/migrating-from-babel-core.html">Migration</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/swc-compiler" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/swcproject/Lobby">Chat on gitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/swc-project/swc">GitHub</a><a class="github-button" href="https://github.com/swc-project/swc" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 The swc project developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '346577cc6b73ae8e2d4c05857a177b62',
+                indexName: 'website',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

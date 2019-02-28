@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://swc-project.github.io/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/en/help" /> </url>
+<url> <loc>https://swc-project.github.io/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/en/index" /> </url>
+<url> <loc>https://swc-project.github.io/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/en/users" /> </url>
+<url> <loc>https://swc-project.github.io/blog/2019/02/08/Introducing-swc-1.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://swc-project.github.io/docs/configuring-swc</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/configuring-swc" /> </url>
+<url> <loc>https://swc-project.github.io/docs/installation</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/installation" /> </url>
+<url> <loc>https://swc-project.github.io/docs/migrating-from-babel-cli</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/migrating-from-babel-cli" /> </url>
+<url> <loc>https://swc-project.github.io/docs/migrating-from-babel-core</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/migrating-from-babel-core" /> </url>
+<url> <loc>https://swc-project.github.io/docs/usage-cli</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/usage-cli" /> </url>
+<url> <loc>https://swc-project.github.io/docs/usage-core</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/usage-core" /> </url>
+<url> <loc>https://swc-project.github.io/docs/usage-swc-loader</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://swc-project.github.io/docs/usage-swc-loader" /> </url>
+</urlset>

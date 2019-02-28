@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuring swc · swc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Swc can be configured with &lt;code&gt;.swcrc&lt;/code&gt; file.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configuring swc · swc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://swc-project.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;Swc can be configured with &lt;code&gt;.swcrc&lt;/code&gt; file.&lt;/p&gt;
+"/><meta property="og:image" content="https://swc-project.github.io/img/swc.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://swc-project.github.io/img/swc.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://swc-project.github.io/blog/atom.xml" title="swc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://swc-project.github.io/blog/feed.xml" title="swc Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-81467907-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">swc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/installation" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://opencollective.com/swc" target="_self">Donate</a></li><li class=""><a href="https://github.com/swc-project/swc" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Configuring swc</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/installation">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Configuring swc</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/configuring-swc">Configuring swc</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul><li class="navListItem"><a class="navItem" href="/docs/usage-core">swc (core)</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-cli">cli</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-swc-loader">swc-loader (Webpack)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Migration</h3><ul><li class="navListItem"><a class="navItem" href="/docs/migrating-from-babel-core">@babel/core</a></li><li class="navListItem"><a class="navItem" href="/docs/migrating-from-babel-cli">@babel/cli</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Configuring swc</h1></header><article><div><span><p>Swc can be configured with <code>.swcrc</code> file.</p>
+<h1><a class="anchor" aria-hidden="true" id="jsc"></a><a href="#jsc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc</h1>
+<h2><a class="anchor" aria-hidden="true" id="jscparser"></a><a href="#jscparser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc.parser</h2>
+<p><code>typescript</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"typescript"</span>,
+      <span class="hljs-attr">"tsx"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"decorators"</span>: <span class="hljs-literal">false</span>
+    }
+  }
+}
+</code></pre>
+<p><code>ecmascript</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"ecmascript"</span>,
+      <span class="hljs-attr">"jsx"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"numericSeparator"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"classPrivateProperty"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"privateMethod"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"classProperty"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"functionBind"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"decorators"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"decoratorsBeforeExport"</span>: <span class="hljs-literal">false</span>
+    }
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="jsctarget"></a><a href="#jsctarget" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc.target</h2>
+<p>Starting from <code>@swc/core</code> v1.0.27, you can specify target environment by using the field.</p>
+<pre><code class="hljs css language-json">{
+  "jsc": {
+    // Disable es3 / es5 / es2015 trnasforms
+    "target": "es2016"
+  }
+}
+</code></pre>
+<p>Possible values are <code>es3</code>, <code>es5</code>, <code>es2015</code>, <code>es2016</code>, <code>es2017</code>, <code>es2018</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="jsctransform"></a><a href="#jsctransform" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc.transform</h2>
+<p>Example</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"transform"</span>: {
+      <span class="hljs-attr">"react"</span>: {
+        <span class="hljs-attr">"pragma"</span>: <span class="hljs-string">"React.createElement"</span>,
+        <span class="hljs-attr">"pragmaFrag"</span>: <span class="hljs-string">"React.Fragment"</span>,
+        <span class="hljs-attr">"throwIfNamespace"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"development"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"useBuiltins"</span>: <span class="hljs-literal">false</span>
+      },
+      <span class="hljs-attr">"optimizer"</span>: {
+        <span class="hljs-attr">"globals"</span>: {
+          <span class="hljs-attr">"vars"</span>: {
+            <span class="hljs-attr">"__DEBUG__"</span>: <span class="hljs-string">"true"</span>
+          }
+        }
+      }
+    }
+  }
+}
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="jsctransformreact"></a><a href="#jsctransformreact" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc.transform.react</h3>
+<ul>
+<li><code>pragma</code>
+Replace the function used when compiling JSX expressions.</li>
+</ul>
+<p>Defaults to <code>React.createElement</code>.</p>
+<ul>
+<li><code>pragmaFrag</code>
+Replace the component used when compiling JSX fragments.</li>
+</ul>
+<p>Defaults to <code>React.Fragment</code></p>
+<ul>
+<li><code>throwIfNamespace</code>
+Toggles whether or not to throw an error if a XML namespaced tag name is used. For example: <code>&lt;f:image /&gt;</code></li>
+</ul>
+<p>Though the JSX spec allows this, it is disabled by default since React's JSX does not currently have support for it.</p>
+<ul>
+<li><p><code>development</code>
+Toggles plugins that aid in development, such as <code>jsx-self</code> and <code>jsx-source</code>.</p></li>
+<li><p><code>useBuiltins</code>
+Use <code>Object.assign()</code> instead of <code>_extends</code>. Defaults to false.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="jsctransformoptimizer"></a><a href="#jsctransformoptimizer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc.transform.optimizer</h3>
+<ul>
+<li>Setting this to <code>undefined</code> skips optimizer pass</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="jsctransformoptimizerglobals"></a><a href="#jsctransformoptimizerglobals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsc.transform.optimizer.globals</h4>
+<ul>
+<li><code>vars</code>
+Variables to inline.</li>
+</ul>
+<p>e.g.
+<code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"transform"</span>: {
+      <span class="hljs-attr">"optimizer"</span>: {
+        <span class="hljs-attr">"globals"</span>: {
+          <span class="hljs-attr">"vars"</span>: {
+            <span class="hljs-attr">"__DEBUG__"</span>: <span class="hljs-string">"true"</span>
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p><code>npx swc '__DEBUG__' --filename input.js</code>:</p>
+<pre><code class="hljs css language-js"><span class="hljs-literal">true</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="module"></a><a href="#module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>module</h2>
+<p>swc can transpile es6 modules to common js module, umd module or amd module.</p>
+<h3><a class="anchor" aria-hidden="true" id="shared-options"></a><a href="#shared-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>shared options</h3>
+<p>These options are shared by common js / umd / amd.</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  "module": {
+    // You can specify "commonjs", "amd", "umd"
+    "type": "commonjs",
+    "strict": false,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="strict"></a><a href="#strict" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>strict</h4>
+<p>By default, when using exports with swc a non-enumerable <code>__esModule</code> property is exported. In some cases this property is used to determine if the import is the default export or if it contains the default export.</p>
+<p>In order to prevent the <code>__esModule</code> property from being exported, you can set the strict option to true.</p>
+<p>Defaults to <code>false</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="strictmode"></a><a href="#strictmode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>strictMode</h4>
+<p>If true, swc emits 'use strict' directive.</p>
+<p>Defaults to <code>true</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="lazy"></a><a href="#lazy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lazy</h4>
+<p>Changes Babel's compiled import statements to be lazily evaluated when their imported bindings are used for the first time. This can improve initial load time of your module because evaluating dependencies up front is sometimes entirely un-necessary. This is especially the case when implementing a library module.</p>
+<p>The value of <code>lazy</code> has a few possible effects:</p>
+<ul>
+<li><code>false</code> - No lazy initialization of any imported module.</li>
+<li><code>true</code> - Do not lazy-initialize local <code>./foo</code> imports, but lazy-init <code>foo</code> dependencies.
+Local paths are much more likely to have circular dependencies, which may break if loaded lazily,
+so they are not lazy by default, whereas dependencies between independent modules are rarely cyclical.</li>
+<li><code>Array&lt;string&gt;</code> - Lazy-initialize all imports with source matching one of the given strings.</li>
+</ul>
+<hr>
+<p>The two cases where imports can never be lazy are:</p>
+<ul>
+<li><code>import &quot;foo&quot;;</code>
+Side-effect imports are automatically non-lazy since their very existence means
+that there is no binding to later kick off initialization.</li>
+<li><code>export from &quot;foo&quot;</code>
+Re-exporting all names requires up-front execution because otherwise there is no
+way to know what names need to be exported.</li>
+</ul>
+<p>Defaults to <code>false</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="nointerop"></a><a href="#nointerop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>noInterop</h4>
+<p>By default, when using exports with swc a non-enumerable __esModule property is exported.
+This property is then used to determine if the import is the default export or if it contains the default export.</p>
+<p>In cases where the auto-unwrapping of default is not needed, you can set the noInterop option to true to avoid the usage of the interopRequireDefault helper (shown in inline form above).</p>
+<p>Defaults to <code>false</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="common-js"></a><a href="#common-js" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>common js</h3>
+<p>To emit common js module, you can do so by</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  "module": {
+    "type": "commonjs",
+
+    // These are defaults.
+    "strict": false,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="amd"></a><a href="#amd" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>amd</h3>
+<p>To emit amd module, you can do so by</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  "module": {
+    "type": "amd",
+    // Optional. If specified, swc emits named amd module.
+    "moduleId": "foo",
+
+    // These are defaults.
+    "strict": false,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="moduleid"></a><a href="#moduleid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>moduleId</h4>
+<p>Defaults to <code>undefined</code>. If specified, swc emits named amd module.</p>
+<h3><a class="anchor" aria-hidden="true" id="umd"></a><a href="#umd" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>umd</h3>
+<p>To emit umd module, you can do so by</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  "module": {
+    "type": "umd",
+    "globals": {},
+
+    // These are defaults.
+    "strict": false,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="globals"></a><a href="#globals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>globals</h4>
+<p>TODO</p>
+<h2><a class="anchor" aria-hidden="true" id="minify"></a><a href="#minify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>minify</h2>
+<p>To get minified output, you can configure swc by</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"minify"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/25/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/docs/usage-core"><span>swc (core)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#jscparser">jsc.parser</a></li><li><a href="#jsctarget">jsc.target</a></li><li><a href="#jsctransform">jsc.transform</a><ul class="toc-headings"><li><a href="#jsctransformreact">jsc.transform.react</a></li><li><a href="#jsctransformoptimizer">jsc.transform.optimizer</a></li></ul></li><li><a href="#module">module</a><ul class="toc-headings"><li><a href="#shared-options">shared options</a></li><li><a href="#common-js">common js</a></li><li><a href="#amd">amd</a></li><li><a href="#umd">umd</a></li></ul></li><li><a href="#minify">minify</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://raw.githubusercontent.com/swc-project/logo/master/swc-without-extra.png" alt="swc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Installation</a><a href="/docs/configuring-swc.html">Configuring swc</a><a href="/docs/usage-cli.html">Usage</a><a href="/docs/migrating-from-babel-core.html">Migration</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/swc-compiler" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://gitter.im/swcproject/Lobby">Chat on gitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/swc-project/swc">GitHub</a><a class="github-button" href="https://github.com/swc-project/swc" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 The swc project developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '346577cc6b73ae8e2d4c05857a177b62',
+                indexName: 'website',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
