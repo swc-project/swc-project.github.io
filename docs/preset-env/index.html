@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>preset-env · swc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Starting with `v1.1.10`, you can now use browserslist to automaticallly configure swc."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="preset-env · swc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://swc.rs/"/><meta property="og:description" content="Starting with `v1.1.10`, you can now use browserslist to automaticallly configure swc."/><meta property="og:image" content="https://swc.rs/img/swc.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://swc.rs/img/swc.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://swc.rs/blog/atom.xml" title="swc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://swc.rs/blog/feed.xml" title="swc Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-81467907-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">swc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/installation" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://opencollective.com/swc" target="_self">Donate</a></li><li class=""><a href="https://github.com/swc-project/swc" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Configuring swc</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Configuring swc</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/configuring-swc">Configuring swc</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/preset-env">preset-env</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Configuring spack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/configuring-spack">Configuring spack</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/usage-swc-cli">cli (swc)</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-spack-cli">cli (spack)</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-swc-loader">swc-loader (Webpack)</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-swc-jest">@swc/jest</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-core">swc (core)</a></li><li class="navListItem"><a class="navItem" href="/docs/usage-plugin">Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Migration</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/migrating-from-babel-core">@babel/core</a></li><li class="navListItem"><a class="navItem" href="/docs/migrating-from-babel-cli">@babel/cli</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Comparison</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/comparison-babel">Comparison with babel</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">preset-env</h1></header><article><div><span><p>Starting with <code>v1.1.10</code>, you can now use browserslist to automaticallly configure swc.</p>
+<p>You need to install <code>browserslist</code> to use this feature.</p>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"env"</span>: {
+    <span class="hljs-attr">"targets"</span>: {
+      <span class="hljs-attr">"chrome"</span>: <span class="hljs-string">"79"</span>
+    },
+    <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"entry"</span>,
+    <span class="hljs-attr">"coreJs"</span>: <span class="hljs-number">3</span>
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="browserslist"></a><a href="#browserslist" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>browserslist</h3>
+<p>If you want to use <code>browserslist</code> with swc, you can just omit <code>targets</code> field like</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"env"</span>: {
+    <span class="hljs-attr">"coreJs"</span>: <span class="hljs-number">3</span>
+  }
+}
+</code></pre>
+<p>Note that <a href="https://github.com/browserslist/browserslist">browserlists</a> can be configured by multiple ways.</p>
+<ul>
+<li><code>.browserslistrc</code></li>
+<li><code>browsers</code> field in package.json</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h2>
+<h3><a class="anchor" aria-hidden="true" id="targets"></a><a href="#targets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>targets</h3>
+<p><code>string | Array&lt;string&gt; | { [string]: string }</code>, defaults to <code>{}</code>.</p>
+<p>Describes the environments you support/target for your project.</p>
+<p>This can either be a <a href="https://github.com/ai/browserslist">browserslist-compatible</a> query:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"env"</span>: {
+    <span class="hljs-attr">"targets"</span>: <span class="hljs-string">"&gt; 0.25%, not dead"</span>
+  }
+}
+</code></pre>
+<p>Or an object of minimum environment versions to support:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"env"</span>: {
+    <span class="hljs-attr">"targets"</span>: {
+      <span class="hljs-attr">"chrome"</span>: <span class="hljs-string">"58"</span>,
+      <span class="hljs-attr">"ie"</span>: <span class="hljs-string">"11"</span>
+    }
+  }
+}
+</code></pre>
+<p>Example environments: <code>chrome</code>, <code>opera</code>, <code>edge</code>, <code>firefox</code>, <code>safari</code>, <code>ie</code>, <code>ios</code>, <code>android</code>, <code>node</code>, <code>electron</code>.</p>
+<p>If <code>targets</code> is not specified, <code>swc</code> uses <code>browserslist</code> to get target information. See <a href="#browserslist">browserslist</a></p>
+<h3><a class="anchor" aria-hidden="true" id="mode"></a><a href="#mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mode</h3>
+<p>See: <a href="https://babeljs.io/docs/en/babel-preset-env#usebuiltins">https://babeljs.io/docs/en/babel-preset-env#usebuiltins</a></p>
+<p>Possible values: <code>usage</code>, <code>entry</code>, <code>undefined</code>
+Defaults to <code>undefined</code>.</p>
+<p><em>Note:</em> Currently <code>usage</code> is not efficient as one of babel. Even though, it does not matter in real world codes.</p>
+<h3><a class="anchor" aria-hidden="true" id="debug"></a><a href="#debug" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>debug</h3>
+<p>Defaults to <code>false</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="dynamicimport"></a><a href="#dynamicimport" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dynamicImport</h3>
+<p>Defaults to <code>false</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="loose"></a><a href="#loose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>loose</h3>
+<p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Enable <a href="http://2ality.com/2015/12/babel6-loose-mode.html">&quot;loose&quot; transformations</a> for any plugins in this preset that allow them.</p>
+<h3><a class="anchor" aria-hidden="true" id="skip"></a><a href="#skip" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>skip</h3>
+<p>Skip some es features. You can use this option to reduce bundle size.</p>
+<p>For example, to exclude <code>core-js/modules/foo</code>, you can use</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"env"</span>: {
+    <span class="hljs-attr">"skip"</span>: [<span class="hljs-string">"core-js/modules/foo"</span>]
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="include"></a><a href="#include" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>include</h3>
+<ul>
+<li>Type is string[]</li>
+<li>can be a core-js module (<code>es.math.sign</code>) or a swc pass (<code>transform-spread</code>)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="exclude"></a><a href="#exclude" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>exclude</h3>
+<ul>
+<li><code>string[]</code></li>
+<li>can be a core-js module (<code>es.math.sign</code>) or a swc pass (<code>transform-spread</code>)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="corejs"></a><a href="#corejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>coreJs</h3>
+<p>The version of the used core js. Defaults to undefined, which panic when mode is configured.</p>
+<h3><a class="anchor" aria-hidden="true" id="shippedproposals"></a><a href="#shippedproposals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>shippedProposals</h3>
+<ul>
+<li><code>boolean</code></li>
+<li>Defaults to <code>false</code>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="forcealltransforms"></a><a href="#forcealltransforms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>forceAllTransforms</h3>
+<ul>
+<li><code>boolean</code></li>
+<li>Defaults to <code>false</code>.</li>
+</ul>
+<p>Enable all trnasforms</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/18/2020 by 강동윤</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/configuring-swc"><span class="arrow-prev">← </span><span>Configuring swc</span></a><a class="docs-next button" href="/docs/configuring-spack"><span>Configuring spack</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a><ul class="toc-headings"><li><a href="#example">Example</a></li><li><a href="#browserslist">browserslist</a></li></ul></li><li><a href="#options">Options</a><ul class="toc-headings"><li><a href="#targets">targets</a></li><li><a href="#mode">mode</a></li><li><a href="#debug">debug</a></li><li><a href="#dynamicimport">dynamicImport</a></li><li><a href="#loose">loose</a></li><li><a href="#skip">skip</a></li><li><a href="#include">include</a></li><li><a href="#exclude">exclude</a></li><li><a href="#corejs">coreJs</a></li><li><a href="#shippedproposals">shippedProposals</a></li><li><a href="#forcealltransforms">forceAllTransforms</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://raw.githubusercontent.com/swc-project/logo/master/swc.png" alt="swc" width="66"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Installation</a><a href="/docs/configuring-swc.html">Configuring swc</a><a href="/docs/usage-swc-cli.html">Usage</a><a href="/docs/migrating-from-babel-core.html">Migration</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/swc-compiler" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://swc-slackin.herokuapp.com/">Slackin for swc</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/swc-project/swc">GitHub</a><a class="github-button" href="https://github.com/swc-project/swc" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 The swc project developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.fbAsyncInit = function() {FB.init({appId:'3577925395580880',xfbml:true,version:'v2.7'});};(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/en_US/sdk.js';fjs.parentNode.insertBefore(js, fjs);}(document, 'script','facebook-jssdk'));
+                </script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '5b6acdf7dc8baaa86317236bb5e2bb9e',
+                indexName: 'swc-project',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

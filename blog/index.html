@@ -1,0 +1,743 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Blog · swc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Super fast javascript / typescript compiler"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Blog · swc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://swc.rs/"/><meta property="og:description" content="Super fast javascript / typescript compiler"/><meta property="og:image" content="https://swc.rs/img/swc.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://swc.rs/img/swc.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://swc.rs/blog/atom.xml" title="swc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://swc.rs/blog/feed.xml" title="swc Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-81467907-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="blog"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">swc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/installation" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://opencollective.com/swc" target="_self">Donate</a></li><li class=""><a href="https://github.com/swc-project/swc" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/blog/2020/12/22/swc-1.2.41">Changelog: swc v1.2.41</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/12/04/swc-1.2.40">Changelog: swc v1.2.40</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/11/21/swc-1.2.39">Changelog: swc v1.2.39</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/11/08/swc-1.2.38">Changelog: swc v1.2.38</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/29/swc-1.2.37">Changelog: swc v1.2.37</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/06/swc-1.2.36">Changelog: swc v1.2.36</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/04/swc-1.2.35">Changelog: swc v1.2.35</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/24/swc-1.2.34">Hotfix: swc v1.2.34</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/24/swc-1.2.33">ChangeLog: swc v1.2.33</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/22/swc-1.2.32">ChangeLog: swc v1.2.32</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/22/swc-1.2.31">ChangeLog: swc v1.2.31</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/18/swc-1.2.30">ChangeLog: swc v1.2.30</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/13/swc-1.2.27">ChangeLog: swc v1.2.27</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/11/swc-1.2.26">Hotfix: swc v1.2.26</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/11/swc-1.2.25">Changelog: swc v1.2.25</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/08/swc-1.2.23">Changelog: swc v1.2.23</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/31/swc-1.2.22">Changelog: swc v1.2.22</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/24/swc-1.2.21">Changelog: swc v1.2.21</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/15/swc-1.2.20">Changelog: swc v1.2.20</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/13/swc-1.2.19">Changelog: swc v1.2.19</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/11/swc-1.2.18">Changelog: swc v1.2.18</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/10/swc-1.2.17">Changelog: swc v1.2.17</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/10/swc-1.2.16">Changelog: swc v1.2.16</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/09/swc-1.2.15">Changelog: swc v1.2.15</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/08/swc-1.2.14">Changelog: swc v1.2.14</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/07/swc-1.2.13">Changelog: swc v1.2.13</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/06/swc-1.2.12">Changelog: swc v1.2.12</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/02/swc-1.2.11">swc v1.2.11: Fix for almost all typescript bugs</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/31/swc-1.2.10">Changelog: swc v1.2.10</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/26/swc-1.2.9">Changelog: swc v1.2.9</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/05/swc-1.2.8">Changelog: swc v1.2.8</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/01/swc-1.2.7">Changelog: swc v1.2.7</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/21/swc-1.2.6">Changelog: swc v1.2.6</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/19/swc-1.2.5">Changelog: swc v1.2.5</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/18/swc-1.2">v1.2: spack: Yet another asset bundler</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/13/swc-1.1.58">Changelog: swc v1.1.58</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/11/swc-1.1.57">Changelog: swc v1.1.57</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/10/swc-1.1.56">Changelog: swc v1.1.56</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/09/swc-1.1.55">Changelog: swc v1.1.55</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/06/swc-1.1.54">Changelog: swc v1.1.54</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/03/swc-1.1.53">Changelog: swc v1.1.53</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/02/swc-1.1.52">Changelog: swc v1.1.52</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/30/swc-1.1.51">Changelog: swc v1.1.51</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/28/swc-1.1.50">Hotfix: swc v1.1.50</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/28/swc-1.1.49">Changelog: swc v1.1.49</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/25/swc-1.1.48">Changelog: swc v1.1.48</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/22/swc-1.1.47">Changelog: swc v1.1.47</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/21/swc-1.1.46">Changelog: swc v1.1.46</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/19/swc-1.1.45">Changelog: swc v1.1.45</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/19/swc-1.1.44">Changelog: swc v1.1.44</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/16/swc-1.1.43">Changelog: swc v1.1.43</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/05/swc-1.1.42">Changelog: swc v1.1.42</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/05/swc-1.1.41">Changelog: swc v1.1.41</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/03/swc-1.1.40">Changelog: swc v1.1.40</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/04/10/swc-1.1.39">Changelog: swc v1.1.39</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/04/05/swc-1.1.38">Changelog: swc v1.1.38</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/28/swc-1.1.37">Changelog: swc v1.1.37</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/26/swc-1.1.36">Changelog: swc v1.1.36</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/16/roadmap-and-call-for-help">Call for help and roadmap</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/14/swc-1.1.35">Changelog: swc v1.1.35</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/10/swc-1.1.34">Changelog: swc v1.1.34</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/04/swc-1.1.32">Changelog: swc v1.1.32</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/04/swc-1.1.33">Changelog: swc v1.1.33</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/01/swc-1.1.31">Changelog: swc v1.1.31</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/29/swc-1.1.30">Changelog: swc v1.1.30</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/27/swc-1.1.29">Changelog: swc v1.1.29</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/22/swc-1.1.28">Changelog: swc v1.1.28</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/20/swc-1.1.27">Changelog: swc v1.1.27</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/19/swc-1.1.26">Changelog: swc v1.1.26</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/17/swc-1.1.25">Changelog: swc v1.1.25</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/16/why-is-swc-fast">Why is swc fast?</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.24">Changelog: swc v1.1.24</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.23">Changelog: swc v1.1.23 - hotfix</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.22">Changelog: swc v1.1.22</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.21">Changelog: swc v1.1.21</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/07/swc-1.1.20">Changelog: swc v1.1.20</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/07/swc-1.1.19">Changelog: swc v1.1.19</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/31/perf-swc-vs-babel">Performance comparison of swc and babel</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/30/swc-1.1.17">Changelog: swc v1.1.17</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/26/swc-1.1.16">Changelog: swc v1.1.16</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/24/swc-1.1.15">Changelog: swc v1.1.15</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/23/swc-1.1.14">Changelog: swc v1.1.14</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/17/swc-1.1.13">Changelog: swc v1.1.13</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/08/swc-1.1.12">Changelog: swc v1.1.12</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/04/pmutil">Introducing pmutil</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/02/swc-1.1.11">Changelog: swc v1.1.11</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/29/swc-1.1.10">Changelog: swc v1.1.10: preset-env</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/25/swc-1.1.9">Changelog: swc v1.1.9</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/24/swc-1.1.8">Changelog: swc v1.1.8</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/21/swc-1.1.7">Changelog: swc v1.1.7</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/14/swc-1.1.6">Changelog: swc v1.1.6</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/11/swc-1.1.5">Changelog: swc v1.1.5</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/09/swc-1.1.4">Changelog: swc v1.1.4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/04/swc-1.1.3">Changelog: swc v1.1.3</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/02/swc-1.1.2">Changelog: swc v1.1.2</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/01/swc-1.1.1">Changelog: swc v1.1.1</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/11/30/announcing-swc-1.1.0">Announcing swc v1.1.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/Introducing-swc-1.0">Introducing swc 1.0</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="posts"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/12/22/swc-1.2.41">Changelog: swc v1.2.41</a></h1><p class="post-meta">December 22, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="codegen-of-string-literals-1287httpsgithubcomswc-projectswcpull1287"></a><a href="#codegen-of-string-literals-1287httpsgithubcomswc-projectswcpull1287" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Codegen of string literals (<a href="https://github.com/swc-project/swc/pull/1287">#1287</a>)</h3>
+<p>The code generator of <a href="https://swc.rs">swc</a> tries to preserve the original input, and it resulted in some bugs.
+It's now fixed by a huge breaking change - storing quote info in the string literal.</p>
+<p>Note that this patch is also included in the new version of <a href="https://deno.land">deno</a>, which is also published today.</p>
+<h3><a class="anchor" aria-hidden="true" id="normalization-of-rn-in-template-literals-1286httpsgithubcomswc-projectswcpull1286"></a><a href="#normalization-of-rn-in-template-literals-1286httpsgithubcomswc-projectswcpull1286" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalization of \r\n in template literals (<a href="https://github.com/swc-project/swc/pull/1286">#1286</a>)</h3>
+<p>Thanks to <a href="https://github.com/Liamolucko">@Liamolucko</a>, <a href="https://swc.rs">swc</a> now follows spec more closely.</p>
+<p><code>\r\n</code> in template literals are now normlized as <code>\n</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="span-of-decalred-items-1282httpsgithubcomswc-projectswcpull1282"></a><a href="#span-of-decalred-items-1282httpsgithubcomswc-projectswcpull1282" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Span of <code>decalre</code>d items (<a href="https://github.com/swc-project/swc/pull/1282">#1282</a>)</h3>
+<p>Now span of various <code>declare</code>d nodes like class declarations or function declarations include span of <code>declare</code> token. Due to how codegen determine codegen print comments, I expect this fix to make codegen print comments correctly.</p>
+<h3><a class="anchor" aria-hidden="true" id="no-hang-on-invalid-character-1274httpsgithubcomswc-projectswcpull1274"></a><a href="#no-hang-on-invalid-character-1274httpsgithubcomswc-projectswcpull1274" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>No hang on invalid character (<a href="https://github.com/swc-project/swc/pull/1274">#1274</a>)</h3>
+<p>Previously, the lexer of <a href="https://swc.rs">swc</a> hangs on invalid input. This was because it did not update the position of the character in case of error. The fix was trivial, but it's important for some environments like deno shell, which gets input from stdin.</p>
+<h3><a class="anchor" aria-hidden="true" id="parse--correctly-1270httpsgithubcomswc-projectswcpull1270"></a><a href="#parse--correctly-1270httpsgithubcomswc-projectswcpull1270" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parse <code>??</code> correctly (<a href="https://github.com/swc-project/swc/pull/1270">#1270</a>)</h3>
+<p>Some tokens were not parsed correctly on ecmascript mode.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-package"></a><a href="#new-package" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New package</h2>
+<p>I wish this was a package about TypeScript type checkers, but I am still working hard on it still working hard. Instead, we introduce a package that allows swc to run on the web.</p>
+<p><code>@swc/wasm-web</code> is a new package which can be used for the web.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/12/04/swc-1.2.40">Changelog: swc v1.2.40</a></h1><p class="post-meta">December 4, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h2><a class="anchor" aria-hidden="true" id="designtype-for-typescript-enums-1248httpsgithubcomswc-projectswcpull1248"></a><a href="#designtype-for-typescript-enums-1248httpsgithubcomswc-projectswcpull1248" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>design;type</code> for typescript enums (<a href="https://github.com/swc-project/swc/pull/1248">#1248</a>)</h2>
+<p>Decorator metadata can be used to create very convenient tools. <a href="https://swc.rs">swc</a> now supports it more correctly.</p>
+<p>For example, the code below works with <a href="https://swc.rs">swc</a><code>@1.2.40+</code>.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">enum</span> MyEnum {
+  x = <span class="hljs-string">"xxx"</span>,
+  y = <span class="hljs-string">"yyy"</span>,
+}
+
+<span class="hljs-keyword">class</span> Xpto {
+  <span class="hljs-meta">@Decorator</span>()
+  value!: MyEnum;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Decorator</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{};
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="regenerator-ternary-with-await-1228httpsgithubcomswc-projectswcpull1228"></a><a href="#regenerator-ternary-with-await-1228httpsgithubcomswc-projectswcpull1228" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>regenerator: ternary with await (<a href="https://github.com/swc-project/swc/pull/1228">#1228</a>)</h2>
+<p>Previously, <a href="https://swc.rs">swc</a> miscompiled the code below because <code>regenerator</code> had a bug.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> source = <span class="hljs-built_in">Math</span>.random() &lt; <span class="hljs-number">2</span> ? <span class="hljs-string">"matilda"</span> : <span class="hljs-string">"fred"</span>;
+<span class="hljs-keyword">const</span> details = {
+  _id: <span class="hljs-string">"1"</span>,
+};
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">request</span>(<span class="hljs-params">path</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`success:<span class="hljs-subst">${path}</span>`</span>;
+}
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> obj =
+    source === <span class="hljs-string">"matilda"</span>
+      ? details
+      : <span class="hljs-keyword">await</span> request(<span class="hljs-string">`/<span class="hljs-subst">${details._id}</span>?source=<span class="hljs-subst">${source}</span>`</span>);
+
+  <span class="hljs-built_in">console</span>.log({ obj });
+})();
+</code></pre>
+<p>I tried hard to mimic its logic as much as possible, but original codebase depends on dynamic nature of javascript and requires shared <code>&amp;mut</code>, so logic differs even if it's a port.</p>
+<p>Anyway, the code above works properly with <a href="https://swc.rs">swc</a><code>@1.2.40</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-circular-imports-in-wrapped-module-1234httpsgithubcomswc-projectswcpull1234"></a><a href="#bundler-circular-imports-in-wrapped-module-1234httpsgithubcomswc-projectswcpull1234" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: Circular imports in wrapped module (<a href="https://github.com/swc-project/swc/pull/1234">#1234</a>)</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/std@0.67.0/path/mod.ts"</span>;
+<span class="hljs-keyword">const</span> { a, ...rest } = { a: <span class="hljs-number">3</span>, b: <span class="hljs-string">"bar"</span> };
+<span class="hljs-built_in">console</span>.log(a, rest, path);
+</code></pre>
+<p>Previously the <a href="https://swc.rs">swc</a>-based bundlers (<code>deno bundle</code> and <code>spack</code>) had a bug which occurs</p>
+<ul>
+<li>Module <code>path</code> is loaded as a wrapped module.</li>
+<li><code>https://deno.land/std@0.67.0/path/mod.ts</code> has circular imports internally.</li>
+</ul>
+<p>This is now fixed and such code works well.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-export--as-alias-1234httpsgithubcomswc-projectswcpull1234"></a><a href="#bundler-export--as-alias-1234httpsgithubcomswc-projectswcpull1234" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: export * as alias (<a href="https://github.com/swc-project/swc/pull/1234">#1234</a>)</h2>
+<p>I got the bug report from <a href="https://deno.land">deno</a> issue tracker, and fixed it by preserving export info.</p>
+<p>See: <a href="https://github.com/denoland/deno/issues/8481">https://github.com/denoland/deno/issues/8481</a></p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-fix-deglobbing-logic-1234httpsgithubcomswc-projectswcpull1234"></a><a href="#bundler-fix-deglobbing-logic-1234httpsgithubcomswc-projectswcpull1234" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: fix deglobbing logic (<a href="https://github.com/swc-project/swc/pull/1234">#1234</a>)</h2>
+<p>Previously, deglobbing logic was to aggressive so that it replaces <code>log.handlers.FileHandler</code> into <code>FileHandler</code>.</p>
+<p>It was because previous logic only checked the originating module. This is fixed by comparing symbols.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> log <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/std/log/mod.ts"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCLI</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt; </span>{
+  <span class="hljs-keyword">await</span> log.setup({
+    handlers: {
+      file: <span class="hljs-keyword">new</span> log.handlers.FileHandler(<span class="hljs-string">"DEBUG"</span>, {
+        filename: <span class="hljs-string">"my.log"</span>,
+      }),
+      <span class="hljs-built_in">console</span>: <span class="hljs-keyword">new</span> log.handlers.ConsoleHandler(<span class="hljs-string">"INFO"</span>),
+    },
+    loggers: {
+      <span class="hljs-keyword">default</span>: {
+        level: <span class="hljs-string">"DEBUG"</span>,
+        handlers: [<span class="hljs-string">"console"</span>, <span class="hljs-string">"file"</span>],
+      },
+    },
+  });
+
+  log.info(<span class="hljs-string">"Ok!"</span>);
+}
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">import</span>.meta.main) {
+  myCLI();
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="codegen-unicode-escape-sequnces-1242httpsgithubcomswc-projectswcpull1242"></a><a href="#codegen-unicode-escape-sequnces-1242httpsgithubcomswc-projectswcpull1242" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>codegen: unicode escape sequnces (<a href="https://github.com/swc-project/swc/pull/1242">#1242</a>)</h2>
+<p>There was a bug which ignores the value part in unicode escapes while printing result code.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-importing-a-module-multiple-time-1242httpsgithubcomswc-projectswcpull1242"></a><a href="#bundler-importing-a-module-multiple-time-1242httpsgithubcomswc-projectswcpull1242" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: importing a module multiple time (<a href="https://github.com/swc-project/swc/pull/1242">#1242</a>)</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/x/aleph/head.ts"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Head2 <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/x/aleph/head.ts"</span>;
+<span class="hljs-built_in">console</span>.log(Head, Head2);
+</code></pre>
+<p>I was a bit curious about the usecase, but I fixed it to be spec-compilant and it works well.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-export-default-in-reexport-1245httpsgithubcomswc-projectswcpull1245"></a><a href="#bundler-export-default-in-reexport-1245httpsgithubcomswc-projectswcpull1245" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: export default in reexport (<a href="https://github.com/swc-project/swc/pull/1245">#1245</a>)</h2>
+<p>Previously the bundler broke code below,</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> c <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/x/case@v2.1.0/mod.ts"</span>;
+<span class="hljs-keyword">const</span> s = <span class="hljs-string">"one FINE day"</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"camel:"</span>, c.camelCase(s));
+</code></pre>
+<p>because <code>https://deno.land/x/case@v2.1.0/mod.ts</code> is defined as</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> camelCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./camelCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> constantCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./constantCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> dotCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./dotCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> headerCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./headerCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> lowerCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./lowerCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> lowerFirstCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./lowerFirstCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> normalCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./normalCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> paramCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./paramCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> pascalCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./pascalCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> pathCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./pathCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> sentenceCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./sentenceCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> snakeCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./snakeCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> swapCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./swapCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> titleCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./titleCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> upperCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./upperCase.ts"</span>;
+<span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> upperFirstCase } <span class="hljs-keyword">from</span> <span class="hljs-string">"./upperFirstCase.ts"</span>;
+</code></pre>
+<p>The bundler can now handle those kinds of reexports properly.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-export-specifiers-without-alias-1246httpsgithubcomswc-projectswcpull1246"></a><a href="#bundler-export-specifiers-without-alias-1246httpsgithubcomswc-projectswcpull1246" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: export specifiers without alias (<a href="https://github.com/swc-project/swc/pull/1246">#1246</a>)</h2>
+<p>Reported with <a href="https://github.com/denoland/deno/issues/8573">https://github.com/denoland/deno/issues/8573</a></p>
+<p>The bundler didn't handled it because while checking for reexports, the bundler modifies ast so that reexport specifier without alias does not exist. But in some circumstances, the bundler injects export specifiers without alias to maintain semantic of a module.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-improve-sorting-1246httpsgithubcomswc-projectswcpull1246"></a><a href="#bundler-improve-sorting-1246httpsgithubcomswc-projectswcpull1246" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: improve sorting (<a href="https://github.com/swc-project/swc/pull/1246">#1246</a>)</h2>
+<p>Reported with <a href="https://github.com/denoland/deno/issues/8574">https://github.com/denoland/deno/issues/8574</a></p>
+<p>The bug was that, the code below was not treated as an initializer of <code>globalContext</code>.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> !== <span class="hljs-string">"undefined"</span>) {
+  globalContext = <span class="hljs-built_in">window</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> self !== <span class="hljs-string">"undefined"</span>) {
+  globalContext = self;
+} <span class="hljs-keyword">else</span> {
+  globalContext = {};
+}
+</code></pre>
+<p>The fix was trivial as there were already utilities to detect initialization.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler-top-level-await-flattening-1246httpsgithubcomswc-projectswcpull1246"></a><a href="#bundler-top-level-await-flattening-1246httpsgithubcomswc-projectswcpull1246" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: top-level-await flattening (<a href="https://github.com/swc-project/swc/pull/1246">#1246</a>)</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">// main.ts</span>
+<span class="hljs-keyword">import</span> { log } <span class="hljs-keyword">from</span> <span class="hljs-string">"./deps.ts"</span>;
+<span class="hljs-keyword">await</span> log.setup({});
+</code></pre>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">// deps.ts</span>
+<span class="hljs-keyword">export</span> * <span class="hljs-keyword">as</span> log <span class="hljs-keyword">from</span> <span class="hljs-string">"./log.ts"</span>;
+</code></pre>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">// log.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-keyword">await</span> setup();
+</code></pre>
+<p>This resulted in a bug because the bundler assumed wrapped module is not async.</p>
+<p>At first glance, it seems hard to fix, but there's a simple trick.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> log_ts = <span class="hljs-keyword">await</span>(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{}
+  <span class="hljs-keyword">await</span> setup();
+})();
+</code></pre>
+<p>This fixes the issue.</p>
+<h2><a class="anchor" aria-hidden="true" id="codegen-multiline-jsx-texts-1241httpsgithubcomswc-projectswcpull1241"></a><a href="#codegen-multiline-jsx-texts-1241httpsgithubcomswc-projectswcpull1241" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>codegen: multiline jsx texts (<a href="https://github.com/swc-project/swc/pull/1241">#1241</a>)</h2>
+<p>Affected code looks like</p>
+<pre><code class="hljs css language-ts">function Component() {
+    return React.createElement("div", {
+        name: "A
+    BB"
+    });
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="async_to_generator-async-method-1241httpsgithubcomswc-projectswcpull1241"></a><a href="#async_to_generator-async-method-1241httpsgithubcomswc-projectswcpull1241" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>async_to_generator: async method (<a href="https://github.com/swc-project/swc/pull/1241">#1241</a>)</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">class</span> Service {
+  <span class="hljs-keyword">async</span> is(a: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">boolean</span>&gt; {
+    <span class="hljs-keyword">return</span> a.toUpperCase() === a;
+  }
+}
+</code></pre>
+<p>should be</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">class</span> Service {
+  is(a) {
+    <span class="hljs-keyword">return</span> _asyncToGenerator(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">yield</span> <span class="hljs-built_in">Promise</span>.resolve();
+      <span class="hljs-keyword">return</span> a.toUpperCase() === a;
+    })();
+  }
+}
+</code></pre>
+<p>but it was transpiled as</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">class</span> Service {
+  is(a) {
+    <span class="hljs-keyword">return</span> _asyncToGenerator(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params">a</span>) </span>{
+      <span class="hljs-keyword">yield</span> <span class="hljs-built_in">Promise</span>.resolve();
+      <span class="hljs-keyword">return</span> a.toUpperCase() === a;
+    })();
+  }
+}
+</code></pre>
+<p>which has wrong <code>a</code> in the parameter. This is fixed by simply removing all parameters.</p>
+<h2><a class="anchor" aria-hidden="true" id="regenerator-no-useless-statements-1241httpsgithubcomswc-projectswcpull1241"></a><a href="#regenerator-no-useless-statements-1241httpsgithubcomswc-projectswcpull1241" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>regenerator: no useless statements (<a href="https://github.com/swc-project/swc/pull/1241">#1241</a>)</h2>
+<p>I made a mistake while proting <code>regenerator</code> pass. The mistake resulted in bit larger code, and very hard time debugging.</p>
+<p>Now I find the cause of case number being not same as one of regenerator, so future bugs will be easily fixed.</p>
+<h2><a class="anchor" aria-hidden="true" id="regenerator-track-finally-properly-1241httpsgithubcomswc-projectswcpull1241"></a><a href="#regenerator-track-finally-properly-1241httpsgithubcomswc-projectswcpull1241" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>regenerator: track finally properly (<a href="https://github.com/swc-project/swc/pull/1241">#1241</a>)</h2>
+<p>Again, <code>regenerator</code> pass depends on shared mutable state hardly, and I made mistake while porting it.
+Fixing it required some dirty code because we have to modify a value stored in a list after inserting it, but it's in managable range.</p>
+<hr>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/11/21/swc-1.2.39">Changelog: swc v1.2.39</a></h1><p class="post-meta">November 21, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="preserved-input-1221httpsgithubcomswc-projectswcpull1221"></a><a href="#preserved-input-1221httpsgithubcomswc-projectswcpull1221" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preserved input (<a href="https://github.com/swc-project/swc/pull/1221">#1221</a>)</h3>
+<p><a href="https://swc.rs">swc</a> now respects the input, and preserves escapes.</p>
+<h3><a class="anchor" aria-hidden="true" id="private-name-in-interfaces-1211httpsgithubcomswc-projectswcissues1211"></a><a href="#private-name-in-interfaces-1211httpsgithubcomswc-projectswcissues1211" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Private name in interfaces (<a href="https://github.com/swc-project/swc/issues/1211">#1211</a>)</h3>
+<p><a href="https://swc.rs">swc</a> previously aborted on input like the below. This is changed to normal error.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> Foo {
+  #bar();
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bundler-rework-1212httpsgithubcomswc-projectswcpull1212"></a><a href="#bundler-rework-1212httpsgithubcomswc-projectswcpull1212" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bundler rework (<a href="https://github.com/swc-project/swc/pull/1212">#1212</a>)</h3>
+<p><code>spack</code>, the bundler of <a href="https://swc.rs">swc</a> project, got a large refactoring and it can now handle almost all valid es codes. As the bundler is also used by <a href="https://deno.land/">deno</a>, the pr contains lots of test for <a href="https://deno.land/">deno</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-features"></a><a href="#new-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New features</h2>
+<h3><a class="anchor" aria-hidden="true" id="bigint-literals-as-property-keys-1192httpsgithubcomswc-projectswcpull1192"></a><a href="#bigint-literals-as-property-keys-1192httpsgithubcomswc-projectswcpull1192" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BigInt literals as property keys (<a href="https://github.com/swc-project/swc/pull/1192">#1192</a>)</h3>
+<p>Thanks to <a href="https://github.com/braddunbar">@braddunbar</a>, <a href="https://swc.rs">swc</a> now supports using bigint literal as a key of property.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/11/08/swc-1.2.38">Changelog: swc v1.2.38</a></h1><p class="post-meta">November 8, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="parenthesis-with-comments-1203httpsgithubcomswc-projectswcissues1203"></a><a href="#parenthesis-with-comments-1203httpsgithubcomswc-projectswcissues1203" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parenthesis with comments (<a href="https://github.com/swc-project/swc/issues/1203">#1203</a>)</h3>
+<p>Previously [swc][] miscompiled</p>
+<pre><code class="hljs css language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isModuleWrapper</span>(<span class="hljs-params">node: Expression</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="hljs-comment">// It's an anonymous function expression that wraps module</span>
+    (node.type === <span class="hljs-string">"FunctionExpression"</span> &amp;&amp; !node.id) ||
+    node.type === <span class="hljs-string">"ArrowFunctionExpression"</span> ||
+    isModuleId(node) ||
+    (node.type === <span class="hljs-string">"ArrayExpression"</span> &amp;&amp;
+      node.elements.length &gt; <span class="hljs-number">1</span> &amp;&amp;
+      isModuleId(node.elements[<span class="hljs-number">0</span>]))
+  );
+}
+</code></pre>
+<p>as</p>
+<pre><code class="hljs css language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isModuleWrapper</span>(<span class="hljs-params">node</span>) </span>{
+  <span class="hljs-keyword">return</span>; <span class="hljs-comment">// It's an anonymous function expression that wraps module</span>
+  (node.type === <span class="hljs-string">"FunctionExpression"</span> &amp;&amp; !node.id) ||
+    node.type === <span class="hljs-string">"ArrowFunctionExpression"</span> ||
+    isModuleId(node) ||
+    (node.type === <span class="hljs-string">"ArrayExpression"</span> &amp;&amp;
+      node.elements.length &gt; <span class="hljs-number">1</span> &amp;&amp;
+      isModuleId(node.elements[<span class="hljs-number">0</span>]));
+}
+</code></pre>
+<p>This is now fixed fundamentally. The parenthesis remover pass now checks if a comment exists for inner node.</p>
+<h3><a class="anchor" aria-hidden="true" id="bundler-stack-overflow--circular-imports-1196httpsgithubcomswc-projectswcpull1196-1205httpsgithubcomswc-projectswcpull1205"></a><a href="#bundler-stack-overflow--circular-imports-1196httpsgithubcomswc-projectswcpull1196-1205httpsgithubcomswc-projectswcpull1205" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: Stack overflow / circular imports (<a href="https://github.com/swc-project/swc/pull/1196">#1196</a>, <a href="https://github.com/swc-project/swc/pull/1205">#1205</a>)</h3>
+<p>Now dependencies of circular imports of exports are handled correctly and topo sort algorithm is now applied correctly.
+The pr fixes number of bugs of <code>deno bundle</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="bundler-handle-swc-helpers-1199httpsgithubcomswc-projectswcpull1199"></a><a href="#bundler-handle-swc-helpers-1199httpsgithubcomswc-projectswcpull1199" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: Handle swc helpers (<a href="https://github.com/swc-project/swc/pull/1199">#1199</a>)</h3>
+<p>Now if you use bundler with [swc], the helpers of [swc][] will be efficiently emitted.</p>
+<h3><a class="anchor" aria-hidden="true" id="caching-of-importmeta-1201httpsgithubcomswc-projectswcpull1201"></a><a href="#caching-of-importmeta-1201httpsgithubcomswc-projectswcpull1201" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching of import.meta (<a href="https://github.com/swc-project/swc/pull/1201">#1201</a>)</h3>
+<p>Thanks to <a href="https://github.com/nayeemrmn">@nayeemrmn</a>, multiple usage of <code>import.meta</code> does not create multiple <code>import.meta</code> object.</p>
+<h3><a class="anchor" aria-hidden="true" id="resolver-hoist-class-decls-1200httpsgithubcomswc-projectswcpull1200"></a><a href="#resolver-hoist-class-decls-1200httpsgithubcomswc-projectswcpull1200" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>resolver: hoist class decls (<a href="https://github.com/swc-project/swc/pull/1200">#1200</a>)</h3>
+<p>Although class declarations are not hoisted, it's a top-level item and should be handled before function bodies.</p>
+<p>I mean,</p>
+<pre><code class="hljs css language-ts">(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Bar();
+  }
+  <span class="hljs-keyword">class</span> Bar {}
+})();
+</code></pre>
+<p>should be treated as</p>
+<pre><code class="hljs css language-ts">(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo__1</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Bar__1();
+  }
+  <span class="hljs-keyword">class</span> Bar__1 {}
+})();
+</code></pre>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/10/29/swc-1.2.37">Changelog: swc v1.2.37</a></h1><p class="post-meta">October 29, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="ascii-only-output-1191httpsgithubcomswc-projectswcpull1191"></a><a href="#ascii-only-output-1191httpsgithubcomswc-projectswcpull1191" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ascii-only output (<a href="https://github.com/swc-project/swc/pull/1191">#1191</a>)</h3>
+<p>Previously [swc] emitted utf-8 output and had some bug related to escape, but[swc] now emits only ascii characters.</p>
+<h3><a class="anchor" aria-hidden="true" id="error-instead-of-panic-1170httpsgithubcomswc-projectswcissues1170"></a><a href="#error-instead-of-panic-1170httpsgithubcomswc-projectswcissues1170" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>error instead of panic (<a href="https://github.com/swc-project/swc/issues/1170">#1170</a>)</h3>
+<p>Previously [swc] panicked if the <code>parse</code> is called with the code below.</p>
+<pre><code class="hljs"><span class="hljs-keyword">const</span> toString: <span class="hljs-function">(<span class="hljs-params">local</span>)(<span class="hljs-params"><span class="hljs-keyword">this</span>: <span class="hljs-built_in">Function</span></span>) =&gt;</span> <span class="hljs-built_in">string</span>) = <span class="hljs-literal">undefined</span>;
+</code></pre>
+<p>This behavior is wrong and [swc] now emits error instead of panicking.</p>
+<h3><a class="anchor" aria-hidden="true" id="codegen-bug-of-if-1185httpsgithubcomswc-projectswcpull1185"></a><a href="#codegen-bug-of-if-1185httpsgithubcomswc-projectswcpull1185" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>codegen bug of if (<a href="https://github.com/swc-project/swc/pull/1185">#1185</a>)</h3>
+<p>Previously [swc] emitted a wrong output for the code below.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">if</span> (...) {}
+<span class="hljs-keyword">else</span> foo++;
+</code></pre>
+<p>Thanks to <a href="https://github.com/braddunbar">@braddunbar</a>, it's now fixed and the generated code works as expected.</p>
+<h3><a class="anchor" aria-hidden="true" id="typeof-helper-issue-1183httpsgithubcomswc-projectswcpull1183"></a><a href="#typeof-helper-issue-1183httpsgithubcomswc-projectswcpull1183" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>typeof helper issue (<a href="https://github.com/swc-project/swc/pull/1183">#1183</a>)</h3>
+<p><code>typeof</code> helper had a bug which occurs in a runtime without <code>Symbol</code>. It's fixed by <a href="https://github.com/wessberg">@wessberg</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="invalid-escapes-in-template-literals-1175httpsgithubcomswc-projectswcpull1175"></a><a href="#invalid-escapes-in-template-literals-1175httpsgithubcomswc-projectswcpull1175" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>invalid escapes in template literals (<a href="https://github.com/swc-project/swc/pull/1175">#1175</a>)</h3>
+<p>According to <code>es2018</code> specification, the code below is valid.</p>
+<pre><code class="hljs css language-js">latex<span class="hljs-string">`\unicode`</span>;
+</code></pre>
+<p>But previously, [swc] could not parse it. This is now fixed by <a href="https://github.com/braddunbar">@braddunbar</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="error-recoveries-1189httpsgithubcomswc-projectswcpull1189"></a><a href="#error-recoveries-1189httpsgithubcomswc-projectswcpull1189" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>error recoveries (<a href="https://github.com/swc-project/swc/pull/1189">#1189</a>)</h3>
+<p>The parser of [swc] can now recover from strict-mode violations.</p>
+<p>It means, even if your file has some errors, you can still get ast although it's not valid.
+As one purpose of [swc] is being a basic building block, this is big win.</p>
+<h3><a class="anchor" aria-hidden="true" id="dce-bug-1157httpsgithubcomswc-projectswcpull1157"></a><a href="#dce-bug-1157httpsgithubcomswc-projectswcpull1157" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dce bug (<a href="https://github.com/swc-project/swc/pull/1157">#1157</a>)</h3>
+<p>The dead code elimination pass had a bug related to class properties, and it's now fixed.</p>
+<p>Now code like below works well after optimizing.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> D {
+  resolve: <span class="hljs-built_in">any</span>;
+  reject: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">d</span>(<span class="hljs-params"></span>): <span class="hljs-title">D</span> </span>{
+  <span class="hljs-keyword">let</span> methods;
+  <span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    methods = { resolve, reject };
+  });
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign(promise, methods);
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="hygiene-bug-1144httpsgithubcomswc-projectswcpull1144"></a><a href="#hygiene-bug-1144httpsgithubcomswc-projectswcpull1144" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hygiene bug (<a href="https://github.com/swc-project/swc/pull/1144">#1144</a>)</h3>
+<p>[swc] had a bug which makes default value in object patterns miscompiled. This is now fixed.</p>
+<h2><a class="anchor" aria-hidden="true" id="bundler"></a><a href="#bundler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bundler</h2>
+<p>Starting from [deno]@1.5, there's an option <code>--no-check</code> in options of <code>deno bundle</code>.
+It uses <code>swc_bundler</code>, which is a general implementation of a web asset bundler.
+While integrating, the [deno] team reported many bugs and those are all fixed.</p>
+<h3><a class="anchor" aria-hidden="true" id="import-and-export-from-a-module-1152httpsgithubcomswc-projectswcpull1152"></a><a href="#import-and-export-from-a-module-1152httpsgithubcomswc-projectswcpull1152" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>import and export from a module (<a href="https://github.com/swc-project/swc/pull/1152">#1152</a>)</h3>
+<p>Previously the bundler failed to process code below.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { a <span class="hljs-keyword">as</span> defaultA, O } <span class="hljs-keyword">from</span> <span class="hljs-string">"./m.ts"</span>;
+<span class="hljs-keyword">export</span> { O } <span class="hljs-keyword">from</span> <span class="hljs-string">"./m.ts"</span>;
+
+<span class="hljs-keyword">interface</span> AOptions {
+  a?(): <span class="hljs-built_in">void</span>;
+  c?: O;
+}
+
+<span class="hljs-keyword">class</span> A {
+  #a: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">void</span>;
+  #c?: O;
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">o: AOptions = {}</span>) {
+    <span class="hljs-keyword">const</span> { a = defaultA, c } = o;
+    <span class="hljs-keyword">this</span>.#a = a;
+    <span class="hljs-keyword">this</span>.#c = c;
+  }
+
+  a() {
+    <span class="hljs-keyword">this</span>.#a();
+  }
+
+  c() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.#c);
+  }
+}
+
+<span class="hljs-keyword">let</span> a = <span class="hljs-keyword">new</span> A();
+a.a();
+a.c();
+</code></pre>
+<p>This is because there was no logic to handle exports and imports from a module. This is fixed by adding such logic.</p>
+<h3><a class="anchor" aria-hidden="true" id="computed-access-to-namespace-imports-1159httpsgithubcomswc-projectswcpull1159"></a><a href="#computed-access-to-namespace-imports-1159httpsgithubcomswc-projectswcpull1159" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>computed access to namespace imports (<a href="https://github.com/swc-project/swc/pull/1159">#1159</a>)</h3>
+<p>This made <a href="https://deno.land/x/oak@v6.3.1/examples/server.ts">https://deno.land/x/oak@v6.3.1/examples/server.ts</a> work after bundling.</p>
+<h3><a class="anchor" aria-hidden="true" id="determinisctic-output-1166httpsgithubcomswc-projectswcpull1166"></a><a href="#determinisctic-output-1166httpsgithubcomswc-projectswcpull1166" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>determinisctic output (<a href="https://github.com/swc-project/swc/pull/1166">#1166</a>)</h3>
+<p>For reliability, I made the output of <code>swc_bundler</code> deterministic.</p>
+<h3><a class="anchor" aria-hidden="true" id="pass-ordering-1171httpsgithubcomswc-projectswcpull1171"></a><a href="#pass-ordering-1171httpsgithubcomswc-projectswcpull1171" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pass ordering (<a href="https://github.com/swc-project/swc/pull/1171">#1171</a>)</h3>
+<p>The pass ordering was wrong, and resulted in a bug, which prevents <a href="https://deno.land/x/oak@v6.3.1/examples/sseServer.ts">https://deno.land/x/oak@v6.3.1/examples/sseServer.ts</a> from working after bundling.</p>
+<h3><a class="anchor" aria-hidden="true" id="export--1154httpsgithubcomswc-projectswcpull1154"></a><a href="#export--1154httpsgithubcomswc-projectswcpull1154" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>export * (<a href="https://github.com/swc-project/swc/pull/1154">#1154</a>)</h3>
+<p>The bundler of [swc] had a bug related to <code>export *</code> where a function or a class is exported. This is fixed by applying same rule as variable exports.</p>
+<h3><a class="anchor" aria-hidden="true" id="codegen-of-single-arg-arrow-functions-1186httpsgithubcomswc-projectswcpull1186"></a><a href="#codegen-of-single-arg-arrow-functions-1186httpsgithubcomswc-projectswcpull1186" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>codegen of single arg arrow functions (<a href="https://github.com/swc-project/swc/pull/1186">#1186</a>)</h3>
+<p>Thanks to <a href="https://github.com/braddunbar">@braddunbar</a>, [swc] now prints arrow function with single arguement properly.</p>
+<h2><a class="anchor" aria-hidden="true" id="typescript-41"></a><a href="#typescript-41" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TypeScript 4.1</h2>
+<h3><a class="anchor" aria-hidden="true" id="as-in-mapped-type-1151httpsgithubcomswc-projectswcpull1151"></a><a href="#as-in-mapped-type-1151httpsgithubcomswc-projectswcpull1151" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>as in mapped type (<a href="https://github.com/swc-project/swc/pull/1151">#1151</a>)</h3>
+<p>Thanks to <a href="https://github.com/g-plane">@g-plane</a>, the code below now works.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> map: { [P <span class="hljs-keyword">in</span> <span class="hljs-built_in">string</span> <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">number</span> };
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="template-literal-type-1190httpsgithubcomswc-projectswcpull1190"></a><a href="#template-literal-type-1190httpsgithubcomswc-projectswcpull1190" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>template literal type (<a href="https://github.com/swc-project/swc/pull/1190">#1190</a>)</h3>
+<p>Thanks to <a href="https://github.com/g-plane">@g-plane</a>, the code below now works.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">type</span> MultiLine = <span class="hljs-string">`
+some value
+`</span>;
+<span class="hljs-keyword">type</span> WithTypes = <span class="hljs-string">`with-a-<span class="hljs-subst">${<span class="hljs-built_in">string</span>}</span>`</span>;
+<span class="hljs-keyword">type</span> WithTypes2 = <span class="hljs-string">`with-a-<span class="hljs-subst">${MyAlias}</span>-end`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="intrinsic-type-1193httpsgithubcomswc-projectswcpull1193"></a><a href="#intrinsic-type-1193httpsgithubcomswc-projectswcpull1193" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>intrinsic type (<a href="https://github.com/swc-project/swc/pull/1193">#1193</a>)</h3>
+<p>Thanks to <a href="https://github.com/g-plane">@g-plane</a>, the code below now works.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> i: intrinsic;
+<span class="hljs-string">``</span><span class="hljs-string">`
+
+[swc]: https://swc.rs
+[deno]: https://deno.land
+</span></code></pre>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/10/06/swc-1.2.36">Changelog: swc v1.2.36</a></h1><p class="post-meta">October 6, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="export--as-ns-1142httpsgithubcomswc-projectswcpull1142"></a><a href="#export--as-ns-1142httpsgithubcomswc-projectswcpull1142" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>export * as ns (<a href="https://github.com/swc-project/swc/pull/1142">#1142</a>)</h3>
+<p><a href="https://swc.rs">swc</a> now handle <code>export * as ns from 'foo';</code> by default, if you are targeting &lt; <code>es2020</code>.</p>
+<p>Also, spack and swc_bundler now supports it directly.</p>
+<h3><a class="anchor" aria-hidden="true" id="conditional-expression-in-await-1133httpsgithubcomswc-projectswcissues1133"></a><a href="#conditional-expression-in-await-1133httpsgithubcomswc-projectswcissues1133" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>conditional expression in await (<a href="https://github.com/swc-project/swc/issues/1133">#1133</a>)</h3>
+<p><a href="https://swc.rs">swc</a> errornously removed parenthesis of conditional expression in await expressions.</p>
+<h3><a class="anchor" aria-hidden="true" id="scope-of-optional-chaining-1136httpsgithubcomswc-projectswcissues1136"></a><a href="#scope-of-optional-chaining-1136httpsgithubcomswc-projectswcissues1136" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>scope of optional chaining (<a href="https://github.com/swc-project/swc/issues/1136">#1136</a>)</h3>
+<p>Previously, <a href="https://swc.rs">swc</a> miscompiled the code below.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> PATCHES = <span class="hljs-keyword">new</span> Map();
+
+<span class="hljs-keyword">const</span> ident = <span class="hljs-string">"foo"</span>;
+<span class="hljs-keyword">const</span> patch = PATCHES.get(ident)?.();
+</code></pre>
+<p>This was compiled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> _obj = PATCHES.get(ident),
+  ref;
+<span class="hljs-keyword">const</span> PATCHES = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+<span class="hljs-keyword">const</span> ident = <span class="hljs-string">"foo"</span>;
+<span class="hljs-keyword">const</span> patch = (ref = _obj) === <span class="hljs-literal">null</span> || ref === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span> ? <span class="hljs-keyword">void</span> <span class="hljs-number">0</span> : ref.call(_obj);
+</code></pre>
+<p>Which results in a runtime error.
+This is caused by sharing variable buffer.
+It's fixed by using two variable buffers.</p>
+<h3><a class="anchor" aria-hidden="true" id="computed-keys-in-object-literal-1140httpsgithubcomswc-projectswcissues1140"></a><a href="#computed-keys-in-object-literal-1140httpsgithubcomswc-projectswcissues1140" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>computed keys in object literal (<a href="https://github.com/swc-project/swc/issues/1140">#1140</a>)</h3>
+<p>The hygiene pass of <a href="https://swc.rs">swc</a> had a bug. The bug was that it does not visit <code>key</code> in <code>{ [key]: value }</code>.</p>
+<p>This is fixed, and code like below works properly.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> categories = [{ key: <span class="hljs-string">"apple"</span> }, { key: <span class="hljs-string">"banana"</span> }, { key: <span class="hljs-string">"strawberry"</span> }];
+
+<span class="hljs-keyword">const</span> item = <span class="hljs-string">"some item"</span>;
+
+<span class="hljs-keyword">const</span> catNames = categories.reduce(<span class="hljs-function">(<span class="hljs-params">a, item</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> { ...a, [item.key.toString()]: item };
+}, {});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bundler-deglob-imports-correctly-1139httpsgithubcomswc-projectswcissues1139"></a><a href="#bundler-deglob-imports-correctly-1139httpsgithubcomswc-projectswcissues1139" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: deglob imports correctly (<a href="https://github.com/swc-project/swc/issues/1139">#1139</a>)</h3>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> circular2 <span class="hljs-keyword">from</span> <span class="hljs-string">"./circular2.ts"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f1</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span> </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"f1"</span>);
+}
+
+circular2.f2();
+</code></pre>
+<p>Previously, the code above was bundled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f1</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"f1"</span>);
+}
+circular2.f2();
+circular1.f1();
+</code></pre>
+<p>which is clearly wrong. It's now fixed.</p>
+<h3><a class="anchor" aria-hidden="true" id="bundler-aliased-imports-1138httpsgithubcomswc-projectswcissues1138"></a><a href="#bundler-aliased-imports-1138httpsgithubcomswc-projectswcissues1138" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: aliased imports (<a href="https://github.com/swc-project/swc/issues/1138">#1138</a>)</h3>
+<p>This bug occurs if nested export is mixed with aliased import.</p>
+<p><code>a.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-string">"a"</span>;
+</code></pre>
+<p><code>l.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> { a } <span class="hljs-keyword">from</span> <span class="hljs-string">"./a.ts"</span>;
+</code></pre>
+<p><code>entry.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { a <span class="hljs-keyword">as</span> defaultA } <span class="hljs-keyword">from</span> <span class="hljs-string">"./l.ts"</span>;
+
+<span class="hljs-keyword">const</span> o: { a?: <span class="hljs-built_in">string</span> } = {};
+
+<span class="hljs-keyword">const</span> { a = defaultA } = o;
+
+<span class="hljs-built_in">console</span>.log(a);
+</code></pre>
+<p>This resulted in</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> o = {};
+<span class="hljs-keyword">const</span> { a = defaultA } = o;
+<span class="hljs-built_in">console</span>.log(a);
+</code></pre>
+<p>which is wrong. It's now fixed and swc_bundler now supports quite complex imports.</p>
+<hr>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/10/04/swc-1.2.35">Changelog: swc v1.2.35</a></h1><p class="post-meta">October 4, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<p>This version includes lots of bugfixes.</p>
+<h3><a class="anchor" aria-hidden="true" id="optional-chaining-1130httpsgithubcomswc-projectswcissues1130"></a><a href="#optional-chaining-1130httpsgithubcomswc-projectswcissues1130" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>optional chaining (<a href="https://github.com/swc-project/swc/issues/1130">#1130</a>)</h3>
+<p>Nested property access in optional chaining is now properly compiled.</p>
+<p>The affected code looks like below. Notice that there's no <code>?</code> before <code>map</code>.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> data;
+<span class="hljs-keyword">const</span> result = data
+  ?.filter(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> <span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span>)
+  .map(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> <span class="hljs-built_in">JSON</span>.stringify(item));
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="computed-typescript-properties-1122httpsgithubcomswc-projectswcissues1122"></a><a href="#computed-typescript-properties-1122httpsgithubcomswc-projectswcissues1122" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>computed typescript properties (<a href="https://github.com/swc-project/swc/issues/1122">#1122</a>)</h3>
+<p>This is a regression caused by <code>v1.2.18</code>. The issue is about computed class properties in typescript.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> identifier = <span class="hljs-string">"bar"</span>;
+
+<span class="hljs-keyword">class</span> Foo {
+  [identifier] = <span class="hljs-number">5</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> Foo().bar);
+</code></pre>
+<p>The code above now works properly.</p>
+<h3><a class="anchor" aria-hidden="true" id="temp-var-in-nullish-coalescing-1123httpsgithubcomswc-projectswcissues1123"></a><a href="#temp-var-in-nullish-coalescing-1123httpsgithubcomswc-projectswcissues1123" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>temp var in nullish coalescing (<a href="https://github.com/swc-project/swc/issues/1123">#1123</a>)</h3>
+<p>Previously,</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> SuperSubmission {
+  [key: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-keyword">const</span> normalizedQuestionSet: <span class="hljs-built_in">any</span> = {};
+
+<span class="hljs-keyword">const</span> submissions: SuperSubmission[] = (
+  normalizedQuestionSet.submissionIds ?? []
+).map(
+  (id, index): <span class="hljs-function"><span class="hljs-params">SuperSubmission</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> submission = normalizedQuestionSet.submissions?.[id];
+
+    <span class="hljs-keyword">const</span> submissionAnswers = (submission.answers ?? []).map(
+      <span class="hljs-function">(<span class="hljs-params">answerId</span>) =&gt;</span> normalizedQuestionSet.answers?.[answerId]
+    );
+
+    <span class="hljs-built_in">console</span>.log(id, index);
+
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-keyword">type</span>: <span class="hljs-string">"super-submission"</span>,
+    };
+  }
+);
+
+<span class="hljs-built_in">console</span>.log(submissions);
+</code></pre>
+<p>was miscompiled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-meta">"use strict"</span>;
+<span class="hljs-keyword">const</span> normalizedQuestionSet = {};
+<span class="hljs-keyword">const</span> submissions = ((_submissionIds = normalizedQuestionSet.submissionIds) !==
+  <span class="hljs-literal">null</span> &amp;&amp; _submissionIds !== <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
+  ? _submissionIds
+  : []
+).map(<span class="hljs-function">(<span class="hljs-params">id, index</span>) =&gt;</span> {
+  <span class="hljs-keyword">var</span> ref, ref1;
+  <span class="hljs-keyword">var</span> _submissionIds;
+  <span class="hljs-keyword">const</span> submission =
+    (ref = normalizedQuestionSet.submissions) === <span class="hljs-literal">null</span> || ref === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
+      ? <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
+      : ref[id];
+  <span class="hljs-keyword">var</span> _answers;
+  <span class="hljs-keyword">const</span> submissionAnswers = ((_answers = submission.answers) !== <span class="hljs-literal">null</span> &amp;&amp;
+  _answers !== <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
+    ? _answers
+    : []
+  ).map(<span class="hljs-function">(<span class="hljs-params">answerId</span>) =&gt;</span>
+    (ref1 = normalizedQuestionSet.answers) === <span class="hljs-literal">null</span> || ref1 === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
+      ? <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
+      : ref1[answerId]
+  );
+  <span class="hljs-built_in">console</span>.log(id, index);
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"super-submission"</span>,
+  };
+});
+<span class="hljs-built_in">console</span>.log(submissions);
+</code></pre>
+<p>which is wrong because <code>var _submissionIds;</code> should be declared at tbe top level. This is fixed by visiting children nodes (like block statement) with a new empty variable buffer.</p>
+<h3><a class="anchor" aria-hidden="true" id="renaming-of-private-class-properties-1117httpsgithubcomswc-projectswcissues1117"></a><a href="#renaming-of-private-class-properties-1117httpsgithubcomswc-projectswcissues1117" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>renaming of private class properties (<a href="https://github.com/swc-project/swc/issues/1117">#1117</a>)</h3>
+<p>At the time of implementing <code>hygiene</code> and <code>resolver</code>, which is the core of the swc, there was no support for private class properties. It resulted in this bug, where <code>hygiene</code> pass renaming private properties. This is fixed by not visiting private identifiers.</p>
+<p>Affected code looks like below.</p>
+<p>Two private identifiers with same name declared in different class, but in same file. This bug is found by <a href="http://github.com/kitsonk">@kitsonk</a> while integrating <code>swc_bundler</code> into deno.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> G {
+  #g!: <span class="hljs-built_in">number</span>[];
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">shared: <span class="hljs-built_in">boolean</span></span>) {
+    <span class="hljs-keyword">if</span> (shared) {
+      <span class="hljs-keyword">this</span>.#g = g;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.#g = [];
+    }
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> H {
+  #g!: <span class="hljs-built_in">number</span>[];
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">shared: <span class="hljs-built_in">boolean</span></span>) {
+    <span class="hljs-keyword">if</span> (shared) {
+      <span class="hljs-keyword">this</span>.#g = g;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.#g = [];
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bundler-too-many-exports-1119httpsgithubcomswc-projectswcissues1119"></a><a href="#bundler-too-many-exports-1119httpsgithubcomswc-projectswcissues1119" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: too many exports (<a href="https://github.com/swc-project/swc/issues/1119">#1119</a>)</h3>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params">...d: <span class="hljs-built_in">string</span>[]</span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">return</span> d.join(<span class="hljs-string">" "</span>);
+}
+</code></pre>
+<p>resulted in</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> _i = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params">...d</span>) </span>{
+    <span class="hljs-keyword">return</span> d.join(<span class="hljs-string">" "</span>);
+  }
+  <span class="hljs-keyword">return</span> {
+    a,
+    d,
+  };
+})();
+</code></pre>
+<p>which is clearly wrong. This is fixed by collecting exported identifiers carefully.</p>
+<h3><a class="anchor" aria-hidden="true" id="bundler-export--1116httpsgithubcomswc-projectswcissues1116"></a><a href="#bundler-export--1116httpsgithubcomswc-projectswcissues1116" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: export * (<a href="https://github.com/swc-project/swc/issues/1116">#1116</a>)</h3>
+<p>Code like</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span> <span class="hljs-string">"./a.ts"</span>;
+</code></pre>
+<p>was handled inproperly by <code>spack</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="stack-overflow-of-inliner-1127httpsgithubcomswc-projectswcpull1127"></a><a href="#stack-overflow-of-inliner-1127httpsgithubcomswc-projectswcpull1127" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stack overflow of inliner (<a href="https://github.com/swc-project/swc/pull/1127">#1127</a>)</h3>
+<p>This is fixed by migrating by working with pointers instead of passing structs around.</p>
+<h3><a class="anchor" aria-hidden="true" id="bundler-importmeta-support-1115httpsgithubcomswc-projectswcissues1115"></a><a href="#bundler-importmeta-support-1115httpsgithubcomswc-projectswcissues1115" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: import.meta support (<a href="https://github.com/swc-project/swc/issues/1115">#1115</a>)</h3>
+<p>As <code>deno bundle</code>, which works with <code>tsc</code> and in a progress of integrating the bundler of swc into it, supports <code>import.meta</code>, I added support for them.</p>
+<p>Currently two meta properties are supported.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span>.meta.main; <span class="hljs-comment">// false for imported modules, and as-is for entries</span>
+</code></pre>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span>.meta.url; <span class="hljs-comment">// The path of file. (Customizable for rust users)</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bundler-namespaced-imports-1109httpsgithubcomswc-projectswcissues1109"></a><a href="#bundler-namespaced-imports-1109httpsgithubcomswc-projectswcissues1109" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: namespaced imports (<a href="https://github.com/swc-project/swc/issues/1109">#1109</a>)</h3>
+<p><code>entry.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> a <span class="hljs-keyword">from</span> <span class="hljs-string">"./a.ts"</span>;
+
+<span class="hljs-built_in">console</span>.log(a);
+</code></pre>
+<p><code>a.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-string">"a"</span>;
+</code></pre>
+<p>is now bundled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> a = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> a = <span class="hljs-string">"a"</span>;
+  <span class="hljs-keyword">return</span> {
+    a,
+  };
+})();
+<span class="hljs-built_in">console</span>.log(a);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bundler-namedspaced-reexports-1110httpsgithubcomswc-projectswcissues1110"></a><a href="#bundler-namedspaced-reexports-1110httpsgithubcomswc-projectswcissues1110" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: namedspaced reexports (<a href="https://github.com/swc-project/swc/issues/1110">#1110</a>)</h3>
+<p>Namespaced export statements like</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> * <span class="hljs-keyword">as</span> c <span class="hljs-keyword">from</span> <span class="hljs-string">"./c.ts"</span>;
+</code></pre>
+<p>is now properly handled.</p>
+<h3><a class="anchor" aria-hidden="true" id="bundler-shorthand-properties-1111httpsgithubcomswc-projectswcissues1111"></a><a href="#bundler-shorthand-properties-1111httpsgithubcomswc-projectswcissues1111" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: shorthand properties (<a href="https://github.com/swc-project/swc/issues/1111">#1111</a>)</h3>
+<p>Bundler had a bug related to shorthand properties. But it's now fixed, and</p>
+<p><code>entry.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { d } <span class="hljs-keyword">from</span> <span class="hljs-string">"./d.ts"</span>;
+
+<span class="hljs-built_in">console</span>.log(d);
+</code></pre>
+<p><code>d.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { a } <span class="hljs-keyword">from</span> <span class="hljs-string">"./a.ts"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> d = { a }; <span class="hljs-comment">// This was problematic</span>
+</code></pre>
+<p><code>a.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-string">"a"</span>;
+</code></pre>
+<p>is compiled as</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> a = <span class="hljs-string">"a"</span>;
+<span class="hljs-keyword">const</span> d = {
+  a: <span class="hljs-string">"a"</span>,
+};
+<span class="hljs-built_in">console</span>.log(d);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="bundler-top-level-await-1112httpsgithubcomswc-projectswcissues1112"></a><a href="#bundler-top-level-await-1112httpsgithubcomswc-projectswcissues1112" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bundler: top level await (<a href="https://github.com/swc-project/swc/issues/1112">#1112</a>)</h3>
+<p>As <code>deno</code> supports top level await, I added support for it to the bundler.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/09/24/swc-1.2.34">Hotfix: swc v1.2.34</a></h1><p class="post-meta">September 24, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="jest-extension-1106httpsgithubcomswc-projectswcpull1106"></a><a href="#jest-extension-1106httpsgithubcomswc-projectswcpull1106" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jest extension (<a href="https://github.com/swc-project/swc/pull/1106">#1106</a>)</h3>
+<p>Previously <code>@swc/jest</code> errornously removed some useful statemetns.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/09/24/swc-1.2.33">ChangeLog: swc v1.2.33</a></h1><p class="post-meta">September 24, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="optional-chaining-1104httpsgithubcomswc-projectswcpull1104"></a><a href="#optional-chaining-1104httpsgithubcomswc-projectswcpull1104" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>optional chaining (<a href="https://github.com/swc-project/swc/pull/1104">#1104</a>)</h3>
+<p>This is a bug made in <code>v1.2.31</code>. <a href="https://swc.rs">swc</a> miscompiled optional chaining in the arguments.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/09/22/swc-1.2.32">ChangeLog: swc v1.2.32</a></h1><p class="post-meta">September 22, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="bugfixes"></a><a href="#bugfixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bugfixes</h2>
+<h3><a class="anchor" aria-hidden="true" id="codegen-of-jsx-nodes-1097httpsgithubcomswc-projectswcpull1097"></a><a href="#codegen-of-jsx-nodes-1097httpsgithubcomswc-projectswcpull1097" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>codegen of jsx nodes (<a href="https://github.com/swc-project/swc/pull/1097">#1097</a>)</h3>
+<p>This helps using a <a href="https://swc.rs">swc</a> as a building block.</p>
+<pre><code class="hljs">
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next" href="/blog/page2/">Next →</a></div></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://raw.githubusercontent.com/swc-project/logo/master/swc.png" alt="swc" width="66"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Installation</a><a href="/docs/configuring-swc.html">Configuring swc</a><a href="/docs/usage-swc-cli.html">Usage</a><a href="/docs/migrating-from-babel-core.html">Migration</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/swc-compiler" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://swc-slackin.herokuapp.com/">Slackin for swc</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/swc-project/swc">GitHub</a><a class="github-button" href="https://github.com/swc-project/swc" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 The swc project developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.fbAsyncInit = function() {FB.init({appId:'3577925395580880',xfbml:true,version:'v2.7'});};(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/en_US/sdk.js';fjs.parentNode.insertBefore(js, fjs);}(document, 'script','facebook-jssdk'));
+                </script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '5b6acdf7dc8baaa86317236bb5e2bb9e',
+                indexName: 'swc-project',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

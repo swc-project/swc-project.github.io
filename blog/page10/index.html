@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Blog · swc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Super fast javascript / typescript compiler"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Blog · swc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://swc.rs/"/><meta property="og:description" content="Super fast javascript / typescript compiler"/><meta property="og:image" content="https://swc.rs/img/swc.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://swc.rs/img/swc.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://swc.rs/blog/atom.xml" title="swc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://swc.rs/blog/feed.xml" title="swc Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-81467907-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="blog"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">swc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/installation" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://opencollective.com/swc" target="_self">Donate</a></li><li class=""><a href="https://github.com/swc-project/swc" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/blog/2020/12/22/swc-1.2.41">Changelog: swc v1.2.41</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/12/04/swc-1.2.40">Changelog: swc v1.2.40</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/11/21/swc-1.2.39">Changelog: swc v1.2.39</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/11/08/swc-1.2.38">Changelog: swc v1.2.38</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/29/swc-1.2.37">Changelog: swc v1.2.37</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/06/swc-1.2.36">Changelog: swc v1.2.36</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/04/swc-1.2.35">Changelog: swc v1.2.35</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/24/swc-1.2.34">Hotfix: swc v1.2.34</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/24/swc-1.2.33">ChangeLog: swc v1.2.33</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/22/swc-1.2.32">ChangeLog: swc v1.2.32</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/22/swc-1.2.31">ChangeLog: swc v1.2.31</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/18/swc-1.2.30">ChangeLog: swc v1.2.30</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/13/swc-1.2.27">ChangeLog: swc v1.2.27</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/11/swc-1.2.26">Hotfix: swc v1.2.26</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/11/swc-1.2.25">Changelog: swc v1.2.25</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/08/swc-1.2.23">Changelog: swc v1.2.23</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/31/swc-1.2.22">Changelog: swc v1.2.22</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/24/swc-1.2.21">Changelog: swc v1.2.21</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/15/swc-1.2.20">Changelog: swc v1.2.20</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/13/swc-1.2.19">Changelog: swc v1.2.19</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/11/swc-1.2.18">Changelog: swc v1.2.18</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/10/swc-1.2.17">Changelog: swc v1.2.17</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/10/swc-1.2.16">Changelog: swc v1.2.16</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/09/swc-1.2.15">Changelog: swc v1.2.15</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/08/swc-1.2.14">Changelog: swc v1.2.14</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/07/swc-1.2.13">Changelog: swc v1.2.13</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/06/swc-1.2.12">Changelog: swc v1.2.12</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/02/swc-1.2.11">swc v1.2.11: Fix for almost all typescript bugs</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/31/swc-1.2.10">Changelog: swc v1.2.10</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/26/swc-1.2.9">Changelog: swc v1.2.9</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/05/swc-1.2.8">Changelog: swc v1.2.8</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/01/swc-1.2.7">Changelog: swc v1.2.7</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/21/swc-1.2.6">Changelog: swc v1.2.6</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/19/swc-1.2.5">Changelog: swc v1.2.5</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/18/swc-1.2">v1.2: spack: Yet another asset bundler</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/13/swc-1.1.58">Changelog: swc v1.1.58</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/11/swc-1.1.57">Changelog: swc v1.1.57</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/10/swc-1.1.56">Changelog: swc v1.1.56</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/09/swc-1.1.55">Changelog: swc v1.1.55</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/06/swc-1.1.54">Changelog: swc v1.1.54</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/03/swc-1.1.53">Changelog: swc v1.1.53</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/02/swc-1.1.52">Changelog: swc v1.1.52</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/30/swc-1.1.51">Changelog: swc v1.1.51</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/28/swc-1.1.50">Hotfix: swc v1.1.50</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/28/swc-1.1.49">Changelog: swc v1.1.49</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/25/swc-1.1.48">Changelog: swc v1.1.48</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/22/swc-1.1.47">Changelog: swc v1.1.47</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/21/swc-1.1.46">Changelog: swc v1.1.46</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/19/swc-1.1.45">Changelog: swc v1.1.45</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/19/swc-1.1.44">Changelog: swc v1.1.44</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/16/swc-1.1.43">Changelog: swc v1.1.43</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/05/swc-1.1.42">Changelog: swc v1.1.42</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/05/swc-1.1.41">Changelog: swc v1.1.41</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/03/swc-1.1.40">Changelog: swc v1.1.40</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/04/10/swc-1.1.39">Changelog: swc v1.1.39</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/04/05/swc-1.1.38">Changelog: swc v1.1.38</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/28/swc-1.1.37">Changelog: swc v1.1.37</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/26/swc-1.1.36">Changelog: swc v1.1.36</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/16/roadmap-and-call-for-help">Call for help and roadmap</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/14/swc-1.1.35">Changelog: swc v1.1.35</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/10/swc-1.1.34">Changelog: swc v1.1.34</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/04/swc-1.1.32">Changelog: swc v1.1.32</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/04/swc-1.1.33">Changelog: swc v1.1.33</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/01/swc-1.1.31">Changelog: swc v1.1.31</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/29/swc-1.1.30">Changelog: swc v1.1.30</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/27/swc-1.1.29">Changelog: swc v1.1.29</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/22/swc-1.1.28">Changelog: swc v1.1.28</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/20/swc-1.1.27">Changelog: swc v1.1.27</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/19/swc-1.1.26">Changelog: swc v1.1.26</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/17/swc-1.1.25">Changelog: swc v1.1.25</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/16/why-is-swc-fast">Why is swc fast?</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.24">Changelog: swc v1.1.24</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.23">Changelog: swc v1.1.23 - hotfix</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.22">Changelog: swc v1.1.22</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.21">Changelog: swc v1.1.21</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/07/swc-1.1.20">Changelog: swc v1.1.20</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/07/swc-1.1.19">Changelog: swc v1.1.19</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/31/perf-swc-vs-babel">Performance comparison of swc and babel</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/30/swc-1.1.17">Changelog: swc v1.1.17</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/26/swc-1.1.16">Changelog: swc v1.1.16</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/24/swc-1.1.15">Changelog: swc v1.1.15</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/23/swc-1.1.14">Changelog: swc v1.1.14</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/17/swc-1.1.13">Changelog: swc v1.1.13</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/08/swc-1.1.12">Changelog: swc v1.1.12</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/04/pmutil">Introducing pmutil</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/02/swc-1.1.11">Changelog: swc v1.1.11</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/29/swc-1.1.10">Changelog: swc v1.1.10: preset-env</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/25/swc-1.1.9">Changelog: swc v1.1.9</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/24/swc-1.1.8">Changelog: swc v1.1.8</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/21/swc-1.1.7">Changelog: swc v1.1.7</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/14/swc-1.1.6">Changelog: swc v1.1.6</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/11/swc-1.1.5">Changelog: swc v1.1.5</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/09/swc-1.1.4">Changelog: swc v1.1.4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/04/swc-1.1.3">Changelog: swc v1.1.3</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/02/swc-1.1.2">Changelog: swc v1.1.2</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/01/swc-1.1.1">Changelog: swc v1.1.1</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/11/30/announcing-swc-1.1.0">Announcing swc v1.1.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/Introducing-swc-1.0">Introducing swc 1.0</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="posts"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/12/14/swc-1.1.6">Changelog: swc v1.1.6</a></h1><p class="post-meta">December 14, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="performance-of-transforms"></a><a href="#performance-of-transforms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>performance of transforms</h2>
+<p>Overall performance of transform passes are improved, thanks to <a href="https://github.com/swc-project/swc/commit/3ec395ba7519a552d20d8120877fae2f270de887">hygiene optimization</a>. Especially, performance of resolver pass is drastically (~60%) improved.</p>
+<h2><a class="anchor" aria-hidden="true" id="typescript-parser-bugfix-507httpsgithubcomswc-projectswcpull507"></a><a href="#typescript-parser-bugfix-507httpsgithubcomswc-projectswcpull507" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>typescript parser bugfix (<a href="https://github.com/swc-project/swc/pull/507">#507</a>)</h2>
+<p>There was a bug which sets target of parser to es3, and it result in a bug that parser fails to parse getter and setter in typescript.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/12/11/swc-1.1.5">Changelog: swc v1.1.5</a></h1><p class="post-meta">December 11, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="dynamic-import-with-es3-target"></a><a href="#dynamic-import-with-es3-target" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dynamic import with es3 target</h2>
+<p>Previously, swc converts import() to _import() as import is a keyword in es3. But, as import() can be stripped out in many way, swc now emits import if <code>jsc.parser.dynamicImport</code> is true.</p>
+<h2><a class="anchor" aria-hidden="true" id="script-parser"></a><a href="#script-parser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>script parser</h2>
+<p>Previously, swc only allows parsing a file as module. Now there's an option to parse file as a script.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { transformSync } <span class="hljs-keyword">from</span> <span class="hljs-string">"@swc/core"</span>;
+
+<span class="hljs-keyword">const</span> code = transformSync(<span class="hljs-string">`with(foo){}`</span>, {
+  isModule: <span class="hljs-literal">false</span>
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="typescript-parser-improvement"></a><a href="#typescript-parser-improvement" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>typescript parser improvement</h2>
+<p><code>swc_ecma_parser</code> can now parse typescript compiler and rxjs.</p>
+<h3><a class="anchor" aria-hidden="true" id="arrow-expression-in-conditional-expressions"></a><a href="#arrow-expression-in-conditional-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>arrow expression in conditional expressions</h3>
+<p>From now, complex code like</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> assertEachNode = shouldAssert(AssertionLevel.Normal)
+  ? <span class="hljs-function">(<span class="hljs-params">nodes: Node[], test: (<span class="hljs-params">node: Node</span>) =&gt; <span class="hljs-built_in">boolean</span>, message?: <span class="hljs-built_in">string</span></span>): <span class="hljs-params">void</span> =&gt;</span>
+      assert(
+        test === <span class="hljs-literal">undefined</span> || every(nodes, test),
+        message || <span class="hljs-string">"Unexpected node."</span>,
+        <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-string">`Node array did not pass test '<span class="hljs-subst">${getFunctionName(test)}</span>'.`</span>,
+        assertEachNode
+      )
+  : noop;
+</code></pre>
+<p>can be parsed.</p>
+<h3><a class="anchor" aria-hidden="true" id="import-type"></a><a href="#import-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>import type</h3>
+<p><code>swc_ecma_parser</code> now supports import types. It means,</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> tty = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tty"</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">typeof</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"tty"</span>);
+</code></pre>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> a: <span class="hljs-keyword">typeof</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"fs"</span>);
+</code></pre>
+<p>are valid.</p>
+<h3><a class="anchor" aria-hidden="true" id="yield-object"></a><a href="#yield-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>yield object</h3>
+<p>Also, codes like</p>
+<pre><code class="hljs css language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gen</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> {};
+}
+</code></pre>
+<p>become valid.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/12/09/swc-1.1.4">Changelog: swc v1.1.4</a></h1><p class="post-meta">December 9, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="loose-mode"></a><a href="#loose-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>loose mode</h2>
+<p><code>swc</code> now has a loose mode, just like babel 2015 transform.
+See <a href="/docs/configuring-swc#jscloose">doc</a> for more detail.</p>
+<h2><a class="anchor" aria-hidden="true" id="lots-of-bug-fix-489httpsgithubcomswc-projectswcpull489"></a><a href="#lots-of-bug-fix-489httpsgithubcomswc-projectswcpull489" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lots of bug fix (<a href="https://github.com/swc-project/swc/pull/489">#489</a>)</h2>
+<p>I copied almost all tests from babel, and fixed lots of bugs.</p>
+<h3><a class="anchor" aria-hidden="true" id="resolver-pass"></a><a href="#resolver-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>resolver pass</h3>
+<p>Resolver pass, along with hygiene and fixer, is core of the swc.</p>
+<h4><a class="anchor" aria-hidden="true" id="handle-object-literals-correctly"></a><a href="#handle-object-literals-correctly" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handle object literals correctly</h4>
+<p>Previously, key of an object literal may interfere with outer identifiers. It means,</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> a = {
+  <span class="hljs-attr">b</span>: <span class="hljs-string">"c"</span>
+};
+use(b);
+</code></pre>
+<p>Second usage of <code>b</code> could be interfered by <code>b</code> in <code>a</code>. <code>swc</code> now hanldes it correctly.</p>
+<h3><a class="anchor" aria-hidden="true" id="hygiene-pass"></a><a href="#hygiene-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hygiene pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="renaming-of-computed-property-name"></a><a href="#renaming-of-computed-property-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Renaming of computed property name</h4>
+<p>Previously,</p>
+<pre><code class="hljs css language-js">class A {
+  [key#1]: "foo";
+  [key#2]: "bar";
+}
+</code></pre>
+<p>(where #n is hygiene number)</p>
+<p>was compiled to</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  [key]: <span class="hljs-string">"foo"</span>;
+  [key]: <span class="hljs-string">"bar"</span>;
+}
+</code></pre>
+<p>which results in a bug. It is now compiled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  [key]: <span class="hljs-string">"foo"</span>;
+  [key1]: <span class="hljs-string">"bar"</span>;
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="fixer-pass"></a><a href="#fixer-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>fixer pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="export-default-expression"></a><a href="#export-default-expression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>export default expression</h4>
+<p>The arrow expression lke</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> arrow =&gt; foo;
+</code></pre>
+<p>and sequence expression like</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> a, b, c;
+</code></pre>
+<p>is now wrapped with a parenthesis.</p>
+<h4><a class="anchor" aria-hidden="true" id="sequence-expression-in-an-arrow-expression"></a><a href="#sequence-expression-in-an-arrow-expression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sequence expression in an arrow expression</h4>
+<p>Previously</p>
+<pre><code class="hljs css language-js">() =&gt; (a, b, c);
+</code></pre>
+<p>was compiled as</p>
+<pre><code class="hljs css language-js">() =&gt; a, b, c;
+</code></pre>
+<p>which is wrong.</p>
+<p><code>swc</code> now compiles it as</p>
+<pre><code class="hljs css language-js">() =&gt; (a, b, c);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="classes-pass"></a><a href="#classes-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>classes pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="handle-super-accesses-correctly"></a><a href="#handle-super-accesses-correctly" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handle super accesses correctly</h4>
+<p><code>swc</code> now handles all valid super accesses. It includes something strange like</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Outer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Parent</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inner</span> </span>{
+      [<span class="hljs-keyword">super</span>()] = <span class="hljs-number">1</span>;
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="computed_properties-pass"></a><a href="#computed_properties-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>computed_properties pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="better-codegen"></a><a href="#better-codegen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Better codegen</h4>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> foo = { a, [b]: c };
+</code></pre>
+<p>is now compiled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span>((_ref = { a }), defineProperty(_ref, b, c), _ref);
+</code></pre>
+<p>instead of</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span>((_ref = {}), defineProperty(_ref, a, a), defineProperty(_ref, b, c), _ref);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="destructuring-pass"></a><a href="#destructuring-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>destructuring pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="for-of-for-in-loop-support"></a><a href="#for-of-for-in-loop-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>for-of, for-in loop support</h4>
+<p>From now, for-of loop and for-in are supported.</p>
+<h4><a class="anchor" aria-hidden="true" id="loose-mode-is-here"></a><a href="#loose-mode-is-here" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>loose mode is here</h4>
+<p>If you want smaller output, you can turn on loose mode.</p>
+<h3><a class="anchor" aria-hidden="true" id="for_of-pass"></a><a href="#for_of-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>for_of pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="assume_array-mode-is-here"></a><a href="#assume_array-mode-is-here" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>assume_array mode is here</h4>
+<p>If you want smaller output, you can turn on assume_array by enabling loose mode.</p>
+<h4><a class="anchor" aria-hidden="true" id="labelled-for-loop-is-handled-correctly"></a><a href="#labelled-for-loop-is-handled-correctly" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>labelled for loop is handled correctly</h4>
+<p>Previously, label was stripped out without any error message, and it resulted in a runtime error. <code>swc</code> now handles labaelled loops correctly.</p>
+<h3><a class="anchor" aria-hidden="true" id="spread-pass"></a><a href="#spread-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>spread pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="loose-mode-is-here-1"></a><a href="#loose-mode-is-here-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>loose mode is here</h4>
+<p>If you don't want <code>_toConsumableArray</code> in output, you can turn on loose mode.</p>
+<h3><a class="anchor" aria-hidden="true" id="template_literal-pass"></a><a href="#template_literal-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>template_literal pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="performance"></a><a href="#performance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Performance</h4>
+<p><code>template_literal</code> pass become much more performant by removing redundant <code>.clone()</code>s.</p>
+<h4><a class="anchor" aria-hidden="true" id="literal"></a><a href="#literal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Literal</h4>
+<p>The pass try it's best to reduce template literals into constant.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> a = <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-string">"foo"</span>}</span>bar`</span>;
+</code></pre>
+<p>is compiled as</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> a = <span class="hljs-string">"foobar"</span>;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="caching"></a><a href="#caching" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching</h4>
+<p>Functions generated for tagged template literals are cached. This behavior is same as it of babel.</p>
+<h3><a class="anchor" aria-hidden="true" id="class_properties-pass"></a><a href="#class_properties-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>class_properties pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="handle-this-inside-static-properties"></a><a href="#handle-this-inside-static-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handle <code>this</code> inside static properties</h4>
+<p><code>swc</code> can now handle</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  <span class="hljs-keyword">static</span> f = <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span> </span>{
+  <span class="hljs-keyword">static</span> c = <span class="hljs-keyword">super</span>.f;
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="handle-private-field-in-complex-assignment"></a><a href="#handle-private-field-in-complex-assignment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handle private field in complex assignment</h4>
+<p><code>swc</code> can now handle</p>
+<pre><code class="hljs css language-js">class A {
+  #f = 0;
+  #g = 0;
+
+  constructor() {
+      ([#f, #g = 3] = [1, 2])
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="handle-super-access-in-properties"></a><a href="#handle-super-access-in-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handle super access in properties</h4>
+<p><code>swc</code> now can handle</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  f = <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span> </span>{
+  c = <span class="hljs-keyword">super</span>.f;
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="handle-complex-super-initialization"></a><a href="#handle-complex-super-initialization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handle complex super initialization</h4>
+<p><code>swc</code> now can handle</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Parent</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> (<span class="hljs-title">super</span>(), <span class="hljs-title">Parent</span>) </span>{}
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="object-rest-spread-pass"></a><a href="#object-rest-spread-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>object rest spread pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="computed-key-with-side-effect"></a><a href="#computed-key-with-side-effect" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Computed key with side effect</h4>
+<p><code>swc</code> can now handle complex object pattern like</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { a, [key++]: b, ...c } = foo;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="destructuring-null"></a><a href="#destructuring-null" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Destructuring null</h4>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> {} = <span class="hljs-literal">null</span>;
+</code></pre>
+<p>now throws an error, instead of being silent.</p>
+<h3><a class="anchor" aria-hidden="true" id="async_to_generator-pass"></a><a href="#async_to_generator-pass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>async_to_generator pass</h3>
+<h4><a class="anchor" aria-hidden="true" id="efficient-handling-of-simple-async-functions"></a><a href="#efficient-handling-of-simple-async-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Efficient handling of simple async functions</h4>
+<p><code>swc</code> now emits minimal output for</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">async</span> () =&gt; <span class="hljs-keyword">await</span> promise;
+</code></pre>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> promise;
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="correct-number-of-parameters"></a><a href="#correct-number-of-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Correct number of parameters</h4>
+<p><code>swc</code> now convert async functions in a way that preserves function.length.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/12/04/swc-1.1.3">Changelog: swc v1.1.3</a></h1><p class="post-meta">December 4, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="try-catch483httpsgithubcomswc-projectswcissues483"></a><a href="#try-catch483httpsgithubcomswc-projectswcissues483" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>try catch(<a href="https://github.com/swc-project/swc/issues/483">#483</a></h2>
+<p><code>swc</code> now handles catch parameter properly.</p>
+<h2><a class="anchor" aria-hidden="true" id="typescript-enum-486httpsgithubcomswc-projectswcissues486"></a><a href="#typescript-enum-486httpsgithubcomswc-projectswcissues486" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript enum (<a href="https://github.com/swc-project/swc/issues/486">#486</a>)</h2>
+<p>Previously, code generated for typescript enums with initializers was wrong.
+From now, valid code is generated.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/12/02/swc-1.1.2">Changelog: swc v1.1.2</a></h1><p class="post-meta">December 2, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="fixed-a-parser-bug-480httpsgithubcomswc-projectswcissues480"></a><a href="#fixed-a-parser-bug-480httpsgithubcomswc-projectswcissues480" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fixed a parser bug (<a href="https://github.com/swc-project/swc/issues/480">#480</a>)</h2>
+<p>Previously, <code>swc</code>'s parser incorrectly parsed <code>1.09</code> as <code>1.9</code>. <code>swc</code> now parses it correctly.</p>
+<h2><a class="anchor" aria-hidden="true" id="preserve-space-in-jsx-481httpsgithubcomswc-projectswcissues481"></a><a href="#preserve-space-in-jsx-481httpsgithubcomswc-projectswcissues481" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preserve space in jsx (<a href="https://github.com/swc-project/swc/issues/481">#481</a>)</h2>
+<p>Previousely,</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> a = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span> {foo}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>;
+</code></pre>
+<p>was compield to</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> a = React.createElement(<span class="hljs-string">"span"</span>, <span class="hljs-literal">null</span>, foo);
+</code></pre>
+<p>, which is wrong. Starting with <code>v1.1.2</code>, <code>swc</code> compiles it as</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> a = React.createElement(<span class="hljs-string">"span"</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">" "</span>, foo);
+</code></pre>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/12/01/swc-1.1.1">Changelog: swc v1.1.1</a></h1><p class="post-meta">December 1, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="typescript-enum"></a><a href="#typescript-enum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TypeScript enum</h2>
+<p>There was a bug related to typescript enum. I guess many compilation errors came from this.</p>
+<p>From now, typescript enums work exactly same as enums compiled with babel.</p>
+<h2><a class="anchor" aria-hidden="true" id="jsonify-409httpsgithubcomswc-projectswcissues409"></a><a href="#jsonify-409httpsgithubcomswc-projectswcissues409" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsonify (<a href="https://github.com/swc-project/swc/issues/409">#409</a>)</h2>
+<p>This optimization technique make loading script faster. This is port of <a href="https://github.com/nd-02110114/babel-plugin-object-to-json-parse">babel-plugin-object-to-json-parse</a>.</p>
+<p>See <a href="/docs/configuring-swc#jsctransformoptimizerjsonify">documentation</a>.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/11/30/announcing-swc-1.1.0">Announcing swc v1.1.0</a></h1><p class="post-meta">November 30, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="plugin"></a><a href="#plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin</h2>
+<p><code>swc</code> now supports custom plugins written in javascript and friends! Note that <code>.d.ts</code> file for ast nodes and <code>Visitor</code> is provided.</p>
+<h3><a class="anchor" aria-hidden="true" id="performance"></a><a href="#performance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Performance</h3>
+<p>One of difference of <code>swc</code> with <code>babel</code> is performance. I optimized <code>swc</code> binary in many ways and here's the benchmark result ran on my MacBook Pro (2.3GHz, 16GB Memory)</p>
+<pre><code class="hljs">[plugin]
+  parse x <span class="hljs-number">3</span>,<span class="hljs-number">156</span> ops/sec ±<span class="hljs-number">0.43</span>% (<span class="hljs-number">89</span> runs sampled)
+  parse + print x <span class="hljs-number">740</span> ops/sec ±<span class="hljs-number">0.35</span>% (<span class="hljs-number">88</span> runs sampled)
+  parse + transform x <span class="hljs-number">734</span> ops/sec ±<span class="hljs-number">0.22</span>% (<span class="hljs-number">88</span> runs sampled)
+  plugin x <span class="hljs-number">720</span> ops/sec ±<span class="hljs-number">0.32</span>% (<span class="hljs-number">87</span> runs sampled)
+[transform]
+  swc (es3) x <span class="hljs-number">761</span> ops/sec ±<span class="hljs-number">0.23</span>% (<span class="hljs-number">89</span> runs sampled)
+  swc (es2015) x <span class="hljs-number">800</span> ops/sec ±<span class="hljs-number">1.02</span>% (<span class="hljs-number">87</span> runs sampled)
+  swc (es2016) x <span class="hljs-number">2</span>,<span class="hljs-number">123</span> ops/sec ±<span class="hljs-number">0.84</span>% (<span class="hljs-number">88</span> runs sampled)
+  swc (es2017) x <span class="hljs-number">2</span>,<span class="hljs-number">131</span> ops/sec ±<span class="hljs-number">1.13</span>% (<span class="hljs-number">90</span> runs sampled)
+  swc (es2018) x <span class="hljs-number">2</span>,<span class="hljs-number">981</span> ops/sec ±<span class="hljs-number">0.25</span>% (<span class="hljs-number">90</span> runs sampled)
+  swc-optimize (es3) x <span class="hljs-number">712</span> ops/sec ±<span class="hljs-number">0.21</span>% (<span class="hljs-number">86</span> runs sampled)
+  babel (es5) x <span class="hljs-number">41.75</span> ops/sec ±<span class="hljs-number">8.07</span>% (<span class="hljs-number">56</span> runs sampled)
+[typescript]
+  swc (es3) x <span class="hljs-number">646</span> ops/sec ±<span class="hljs-number">2.25</span>% (<span class="hljs-number">87</span> runs sampled)
+  swc (es5) x <span class="hljs-number">703</span> ops/sec ±<span class="hljs-number">0.55</span>% (<span class="hljs-number">89</span> runs sampled)
+  swc (es2015) x <span class="hljs-number">708</span> ops/sec ±<span class="hljs-number">0.26</span>% (<span class="hljs-number">87</span> runs sampled)
+  swc (es2016) x <span class="hljs-number">1</span>,<span class="hljs-number">656</span> ops/sec ±<span class="hljs-number">0.17</span>% (<span class="hljs-number">90</span> runs sampled)
+  swc (es2017) x <span class="hljs-number">1</span>,<span class="hljs-number">661</span> ops/sec ±<span class="hljs-number">0.33</span>% (<span class="hljs-number">91</span> runs sampled)
+  swc (es2018) x <span class="hljs-number">2</span>,<span class="hljs-number">135</span> ops/sec ±<span class="hljs-number">0.25</span>% (<span class="hljs-number">88</span> runs sampled)
+  swc-optimize (es3) x <span class="hljs-number">631</span> ops/sec ±<span class="hljs-number">0.13</span>% (<span class="hljs-number">88</span> runs sampled)
+  babel (es5) x <span class="hljs-number">41.89</span> ops/sec ±<span class="hljs-number">4.62</span>% (<span class="hljs-number">54</span> runs sampled)
+</code></pre>
+<p><code>:babel</code> does same tasks as &quot;swc (es5)&quot; while <code>:plugin</code> does tasks of &quot;swc (es3)&quot; and javsacript-based traversal of all ast nodes. <code>swc</code> is much faster than babel even though <code>swc</code> does more work.</p>
+<h3><a class="anchor" aria-hidden="true" id="example-plugin"></a><a href="#example-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example plugin</h3>
+<p>Let's write a transform which removes console calls such as <code>console.log()</code>.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { CallExpression, Expression } <span class="hljs-keyword">from</span> <span class="hljs-string">"@swc/core"</span>;
+<span class="hljs-keyword">import</span> Visitor <span class="hljs-keyword">from</span> <span class="hljs-string">"@swc/core/Visitor"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> ConsoleStripper <span class="hljs-keyword">extends</span> Visitor {
+  visitCallExpression(e: CallExpression): Expression {
+    <span class="hljs-keyword">if</span> (e.callee.type !== <span class="hljs-string">"MemberExpression"</span>) {
+      <span class="hljs-keyword">return</span> e;
+    }
+
+    <span class="hljs-keyword">if</span> (
+      e.callee.object.type === <span class="hljs-string">"Identifier"</span> &amp;&amp;
+      e.callee.object.value === <span class="hljs-string">"console"</span>
+    ) {
+      <span class="hljs-keyword">if</span> (e.callee.property.type === <span class="hljs-string">"Identifier"</span>) {
+        <span class="hljs-keyword">return</span> {
+          <span class="hljs-keyword">type</span>: <span class="hljs-string">"UnaryExpression"</span>,
+          span: e.span,
+          operator: <span class="hljs-string">"void"</span>,
+          argument: {
+            <span class="hljs-keyword">type</span>: <span class="hljs-string">"NumericLiteral"</span>,
+            span: e.span,
+            value: <span class="hljs-number">0</span>
+          }
+        };
+      }
+    }
+
+    <span class="hljs-keyword">return</span> e;
+  }
+}
+</code></pre>
+<p>You are done. You can turn on swc's optimizer with <code>jsc.transform.optimizer</code> to remove void 0.</p>
+<p>See: <a href="https://github.com/swc-project/plugin-strip-console">https://github.com/swc-project/plugin-strip-console</a></p>
+<h2><a class="anchor" aria-hidden="true" id="parser"></a><a href="#parser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parser</h2>
+<h3><a class="anchor" aria-hidden="true" id="performance-1"></a><a href="#performance-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Performance</h3>
+<p>Again, <code>swc</code> is fast.</p>
+<pre><code class="hljs"><span class="hljs-keyword">test </span>angular          ... bench:  30,891,704 ns/iter (+/- 772,962) = 23 MB/s
+<span class="hljs-keyword">test </span>backbone         ... bench:   4,373,650 ns/iter (+/- 180,866) = 13 MB/s
+<span class="hljs-keyword">test </span>colors           ... bench:      51,904 ns/iter (+/- 18,036) = 22 MB/s
+<span class="hljs-keyword">test </span>jquery           ... bench:  24,994,575 ns/iter (+/- 859,167) = 10 MB/s
+<span class="hljs-keyword">test </span>jquery_mobile    ... bench:  38,977,299 ns/iter (+/- 1,264,947) = 11 MB/s
+<span class="hljs-keyword">test </span>mootools         ... bench:  20,026,818 ns/iter (+/- 552,056) = 8 MB/s
+<span class="hljs-keyword">test </span>underscore       ... bench:   3,628,824 ns/iter (+/- 101,667) = 12 MB/s
+<span class="hljs-keyword">test </span>yui              ... bench:  18,176,174 ns/iter (+/- 213,133) = 18 MB/s
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="optional-chaining-442httpsgithubcomswc-projectswcissues442"></a><a href="#optional-chaining-442httpsgithubcomswc-projectswcissues442" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional chaining (<a href="https://github.com/swc-project/swc/issues/442">#442</a>)</h3>
+<p><code>swc</code> now supports optional chaining from <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html">typescript 3.7</a>.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> foo = a?.b?.c;
+</code></pre>
+<p>As this is official syntax, this is enabled by default if you configure <code>{ syntax: &quot;typescript&quot; }</code> in <code>.swcrc</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="error-recovery"></a><a href="#error-recovery" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error recovery</h3>
+<p><code>swc_ecma_parser</code> did not supported any error recovert when <code>v1.0.0</code> was released. As it made debugging hard, I implemented lot of error recovery logic. Note that I'll keep improving error recovery while <code>swc</code> matches the grade of tsc.</p>
+<p>I stored reference errors of each file in <a href="https://github.com/swc-project/swc/tree/master/ecmascript/parser/tests/test262-error-references/fail">ecmascript parser's test suite</a>.</p>
+<pre><code class="hljs"><span class="hljs-keyword">error: </span>Unexpected token Some(Comma)
+ --&gt; $DIR/tests/test262-parser/fail/0557c70da3f698b5.module.js:1:11
+  |
+1 | import {b,,c} from 'a';
+  |           ^
+
+</code></pre>
+<p>This is an example of reference.</p>
+<h3><a class="anchor" aria-hidden="true" id="span"></a><a href="#span" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Span</h3>
+<p>Span of error becomes much more accurate. Swc has an error reporting test which tests many tests from <a href="https://github.com/tc39/test262">test262</a>, the official ecmascript test suite.</p>
+<h2><a class="anchor" aria-hidden="true" id="swcrc"></a><a href="#swcrc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.swcrc</h2>
+<p><code>.swcrc</code> file is improved.</p>
+<h3><a class="anchor" aria-hidden="true" id="multiple-entries"></a><a href="#multiple-entries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multiple entries</h3>
+<p>Starting with <code>v1.0.47</code>, you can specify multiple entries in <code>.swcrc</code>.</p>
+<pre><code class="hljs css language-json">[
+  {
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">".*.js$"</span>,
+    <span class="hljs-attr">"module"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"commonjs"</span>
+    }
+  },
+  {
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">".*.ts$"</span>,
+    <span class="hljs-attr">"module"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"amd"</span>
+    }
+  }
+]
+</code></pre>
+<p>This make swc compile javascript files as common js module (uses <code>require('foo')</code>) and compile typescript files as amd modules.</p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/02/08/Introducing-swc-1.0">Introducing swc 1.0</a></h1><p class="post-meta">February 8, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<h3><a class="anchor" aria-hidden="true" id="what-is-swc"></a><a href="#what-is-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is swc?</h3>
+<p><a href="https://github.com/swc-project/swc">swc</a>(speedy web compiler) is a super-fast javascript to javascript compiler.</p>
+<h3><a class="anchor" aria-hidden="true" id="what-can-swc-do"></a><a href="#what-can-swc-do" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What can swc do?</h3>
+<p>It can transpile typescript / jsx / ecmascript 2019 to browser-compatible javascript.</p>
+<p><code>input.js</code>:</p>
+<pre><code class="hljs css language-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{
+  <span class="hljs-keyword">set</span> foo(v) {}
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Foo</span> </span>{
+  <span class="hljs-keyword">get</span> bar1() {}
+  <span class="hljs-keyword">async</span> bar2() {}
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="how-fast-is-swc"></a><a href="#how-fast-is-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How fast is swc?</h3>
+<p>It's 16x - 20x faster than babel even on single-core synchronous benchmark. Note that actual performance gap is larger because swc works on worker thread while babel works on event loop thread.</p>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>You can install <code>swc</code> with</p>
+<pre><code class="hljs css language-sh">npm install --save-dev @swc/core
+</code></pre>
+<p>or</p>
+<pre><code class="hljs css language-sh">yarn add --dev @swc/core
+</code></pre>
+<p>See <a href="/docs/installation">installation guide</a> for more details.</p>
+<h2><a class="anchor" aria-hidden="true" id="what-is-included-in-swc-100"></a><a href="#what-is-included-in-swc-100" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is included in swc 1.0.0?</h2>
+<p>Swc implements almost all babel plugins. As of 1.0.0, swc can understand various dialects of ecmascript and compiles them into es5.</p>
+<h3><a class="anchor" aria-hidden="true" id="ecmascript-2019-support"></a><a href="#ecmascript-2019-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECMAScript 2019 support</h3>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"ecmascript"</span>
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="react-with-jsx"></a><a href="#react-with-jsx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React (with jsx)</h3>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"ecmascript"</span>,
+      <span class="hljs-attr">"jsx"</span>: <span class="hljs-literal">true</span>
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="typescript-support"></a><a href="#typescript-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript support</h3>
+<p>Swc can also compile typescript / tsx to ecmascript. Note that it does not type-check at the time of writing. Type checking is tracked at <a href="https://github.com/swc-project/swc/issues/126">#126</a>.</p>
+<p><code>.swcrc</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsc"</span>: {
+    <span class="hljs-attr">"parser"</span>: {
+      <span class="hljs-attr">"syntax"</span>: <span class="hljs-string">"typescript"</span>,
+      <span class="hljs-attr">"tsx"</span>: <span class="hljs-literal">false</span>
+    }
+  }
+}
+</code></pre>
+<p>See <a href="/docs/configuring-swc">docs</a> for more details.</p>
+<h3><a class="anchor" aria-hidden="true" id="various-transforms"></a><a href="#various-transforms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Various transforms</h3>
+<ul>
+<li><p>es3</p>
+<ul>
+<li>member-expression-literals</li>
+<li>property-literals</li>
+<li>reserved-words</li>
+</ul></li>
+<li><p>es2015</p>
+<ul>
+<li>arrow-functions</li>
+<li>block-scoped-functions</li>
+<li>block-scoping</li>
+<li>classes</li>
+<li>computed-properties</li>
+<li>destructuring</li>
+<li>duplicate-keys</li>
+<li>for-of</li>
+<li>function-name</li>
+<li>instanceof</li>
+<li>literals</li>
+<li>new-target</li>
+<li>parameters</li>
+<li>shorthand-properties</li>
+<li>spread</li>
+<li>sticky regex (<code>y</code> flag)</li>
+<li>template-literals</li>
+<li>typeof-symbol</li>
+</ul></li>
+<li><p>es2016</p>
+<ul>
+<li>exponentiation-operator</li>
+</ul></li>
+<li><p>es2017</p>
+<ul>
+<li>async-to-generator</li>
+</ul></li>
+<li><p>es2018</p>
+<ul>
+<li>object-rest-spread</li>
+</ul></li>
+<li><p>react</p>
+<ul>
+<li>jsx</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="migrating-from-babel"></a><a href="#migrating-from-babel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Migrating from babel</h2>
+<h3><a class="anchor" aria-hidden="true" id="babelcore"></a><a href="#babelcore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@babel/core</h3>
+<p>Run <code>npm i --save-dev @swc/core</code> or <code>yarn add --dev @swc/core</code>.</p>
+<p>Swc enables all passes by default. So if you are using only standartd ecmascript, you can just delete <code>.babelrc</code> and change <code>babel.transform()</code> to <code>swc.transform()</code>.</p>
+<p>See <a href="/docs/usage-core">usage docs</a> and <a href="/docs/migrating-from-babel-core">migration docs</a> for more details.
+Also note that swc does not support custom plugin yet.</p>
+<h3><a class="anchor" aria-hidden="true" id="babelcli"></a><a href="#babelcli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@babel/cli</h3>
+<p>Run <code>npm i --save-dev @swc/core @swc/cli</code> or <code>yarn add --dev @swc/core @swc/cli</code> to install. CLI apis of <code>@swc/cli</code> is almost equivalent to it of <code>@babel/cli</code>. So if you are using standartd ecmascript, you can just replace <code>npx babel</code> to <code>npx swc</code>. If it results in an error, please <a href="https://github.com/swc-project/swc/issues">report an error</a>.</p>
+<p>See <a href="/docs/usage-cli">usage docs</a> and <a href="/docs/migrating-from-babel-cli">migration docs</a> for more details. Also note that swc does not support custom plugin yet.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev" href="/blog/page9/">← Prev</a></div></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://raw.githubusercontent.com/swc-project/logo/master/swc.png" alt="swc" width="66"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Installation</a><a href="/docs/configuring-swc.html">Configuring swc</a><a href="/docs/usage-swc-cli.html">Usage</a><a href="/docs/migrating-from-babel-core.html">Migration</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/swc-compiler" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://swc-slackin.herokuapp.com/">Slackin for swc</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/swc-project/swc">GitHub</a><a class="github-button" href="https://github.com/swc-project/swc" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 The swc project developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.fbAsyncInit = function() {FB.init({appId:'3577925395580880',xfbml:true,version:'v2.7'});};(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/en_US/sdk.js';fjs.parentNode.insertBefore(js, fjs);}(document, 'script','facebook-jssdk'));
+                </script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '5b6acdf7dc8baaa86317236bb5e2bb9e',
+                indexName: 'swc-project',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

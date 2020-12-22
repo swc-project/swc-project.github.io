@@ -1,0 +1,620 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Introducing pmutil · swc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="`swc` uses proc macros extensively. I use a procedural macro if possible to reduce boilerplates and to avoid rewriting boilerplates when something is changed. Behind the scene, there&#x27;s a hero crate called [pmutil][]. It provides useful stuffs for proc macros."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Introducing pmutil · swc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://swc.rs/blog/2020/01/04/pmutil"/><meta property="og:description" content="`swc` uses proc macros extensively. I use a procedural macro if possible to reduce boilerplates and to avoid rewriting boilerplates when something is changed. Behind the scene, there&#x27;s a hero crate called [pmutil][]. It provides useful stuffs for proc macros."/><meta property="og:image" content="https://swc.rs/img/swc.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://swc.rs/img/swc.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://swc.rs/blog/atom.xml" title="swc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://swc.rs/blog/feed.xml" title="swc Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-81467907-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">swc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/installation" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://opencollective.com/swc" target="_self">Donate</a></li><li class=""><a href="https://github.com/swc-project/swc" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/blog/2020/12/22/swc-1.2.41">Changelog: swc v1.2.41</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/12/04/swc-1.2.40">Changelog: swc v1.2.40</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/11/21/swc-1.2.39">Changelog: swc v1.2.39</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/11/08/swc-1.2.38">Changelog: swc v1.2.38</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/29/swc-1.2.37">Changelog: swc v1.2.37</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/06/swc-1.2.36">Changelog: swc v1.2.36</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/04/swc-1.2.35">Changelog: swc v1.2.35</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/24/swc-1.2.34">Hotfix: swc v1.2.34</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/24/swc-1.2.33">ChangeLog: swc v1.2.33</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/22/swc-1.2.32">ChangeLog: swc v1.2.32</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/22/swc-1.2.31">ChangeLog: swc v1.2.31</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/18/swc-1.2.30">ChangeLog: swc v1.2.30</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/13/swc-1.2.27">ChangeLog: swc v1.2.27</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/11/swc-1.2.26">Hotfix: swc v1.2.26</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/11/swc-1.2.25">Changelog: swc v1.2.25</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/08/swc-1.2.23">Changelog: swc v1.2.23</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/31/swc-1.2.22">Changelog: swc v1.2.22</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/24/swc-1.2.21">Changelog: swc v1.2.21</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/15/swc-1.2.20">Changelog: swc v1.2.20</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/13/swc-1.2.19">Changelog: swc v1.2.19</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/11/swc-1.2.18">Changelog: swc v1.2.18</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/10/swc-1.2.17">Changelog: swc v1.2.17</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/10/swc-1.2.16">Changelog: swc v1.2.16</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/09/swc-1.2.15">Changelog: swc v1.2.15</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/08/swc-1.2.14">Changelog: swc v1.2.14</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/07/swc-1.2.13">Changelog: swc v1.2.13</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/06/swc-1.2.12">Changelog: swc v1.2.12</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/08/02/swc-1.2.11">swc v1.2.11: Fix for almost all typescript bugs</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/31/swc-1.2.10">Changelog: swc v1.2.10</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/26/swc-1.2.9">Changelog: swc v1.2.9</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/05/swc-1.2.8">Changelog: swc v1.2.8</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/01/swc-1.2.7">Changelog: swc v1.2.7</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/21/swc-1.2.6">Changelog: swc v1.2.6</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/19/swc-1.2.5">Changelog: swc v1.2.5</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/18/swc-1.2">v1.2: spack: Yet another asset bundler</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/13/swc-1.1.58">Changelog: swc v1.1.58</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/11/swc-1.1.57">Changelog: swc v1.1.57</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/10/swc-1.1.56">Changelog: swc v1.1.56</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/09/swc-1.1.55">Changelog: swc v1.1.55</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/06/swc-1.1.54">Changelog: swc v1.1.54</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/03/swc-1.1.53">Changelog: swc v1.1.53</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/02/swc-1.1.52">Changelog: swc v1.1.52</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/30/swc-1.1.51">Changelog: swc v1.1.51</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/28/swc-1.1.50">Hotfix: swc v1.1.50</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/28/swc-1.1.49">Changelog: swc v1.1.49</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/25/swc-1.1.48">Changelog: swc v1.1.48</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/22/swc-1.1.47">Changelog: swc v1.1.47</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/21/swc-1.1.46">Changelog: swc v1.1.46</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/19/swc-1.1.45">Changelog: swc v1.1.45</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/19/swc-1.1.44">Changelog: swc v1.1.44</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/16/swc-1.1.43">Changelog: swc v1.1.43</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/05/swc-1.1.42">Changelog: swc v1.1.42</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/05/swc-1.1.41">Changelog: swc v1.1.41</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/03/swc-1.1.40">Changelog: swc v1.1.40</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/04/10/swc-1.1.39">Changelog: swc v1.1.39</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/04/05/swc-1.1.38">Changelog: swc v1.1.38</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/28/swc-1.1.37">Changelog: swc v1.1.37</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/26/swc-1.1.36">Changelog: swc v1.1.36</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/16/roadmap-and-call-for-help">Call for help and roadmap</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/14/swc-1.1.35">Changelog: swc v1.1.35</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/10/swc-1.1.34">Changelog: swc v1.1.34</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/04/swc-1.1.32">Changelog: swc v1.1.32</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/04/swc-1.1.33">Changelog: swc v1.1.33</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/03/01/swc-1.1.31">Changelog: swc v1.1.31</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/29/swc-1.1.30">Changelog: swc v1.1.30</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/27/swc-1.1.29">Changelog: swc v1.1.29</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/22/swc-1.1.28">Changelog: swc v1.1.28</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/20/swc-1.1.27">Changelog: swc v1.1.27</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/19/swc-1.1.26">Changelog: swc v1.1.26</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/17/swc-1.1.25">Changelog: swc v1.1.25</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/16/why-is-swc-fast">Why is swc fast?</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.24">Changelog: swc v1.1.24</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.23">Changelog: swc v1.1.23 - hotfix</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.22">Changelog: swc v1.1.22</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/13/swc-1.1.21">Changelog: swc v1.1.21</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/07/swc-1.1.20">Changelog: swc v1.1.20</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/02/07/swc-1.1.19">Changelog: swc v1.1.19</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/31/perf-swc-vs-babel">Performance comparison of swc and babel</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/30/swc-1.1.17">Changelog: swc v1.1.17</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/26/swc-1.1.16">Changelog: swc v1.1.16</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/24/swc-1.1.15">Changelog: swc v1.1.15</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/23/swc-1.1.14">Changelog: swc v1.1.14</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/17/swc-1.1.13">Changelog: swc v1.1.13</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/08/swc-1.1.12">Changelog: swc v1.1.12</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2020/01/04/pmutil">Introducing pmutil</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/02/swc-1.1.11">Changelog: swc v1.1.11</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/29/swc-1.1.10">Changelog: swc v1.1.10: preset-env</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/25/swc-1.1.9">Changelog: swc v1.1.9</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/24/swc-1.1.8">Changelog: swc v1.1.8</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/21/swc-1.1.7">Changelog: swc v1.1.7</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/14/swc-1.1.6">Changelog: swc v1.1.6</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/11/swc-1.1.5">Changelog: swc v1.1.5</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/09/swc-1.1.4">Changelog: swc v1.1.4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/04/swc-1.1.3">Changelog: swc v1.1.3</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/02/swc-1.1.2">Changelog: swc v1.1.2</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/01/swc-1.1.1">Changelog: swc v1.1.1</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/11/30/announcing-swc-1.1.0">Announcing swc v1.1.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/Introducing-swc-1.0">Introducing swc 1.0</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/01/04/pmutil">Introducing pmutil</a></h1><p class="post-meta">January 4, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener">DongYoon Kang</a></p><div class="authorPhoto"><a href="http://github.com/kdy1" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100024888122318/picture/?height=200&amp;width=200" alt="DongYoon Kang"/></a></div></div></header><div><span><p><code>swc</code> uses proc macros extensively. I use a procedural macro if possible to reduce boilerplates and to avoid rewriting boilerplates when something is changed. Behind the scene, there's a hero crate called <a href="https://github.com/kdy1/rust-pmutil">pmutil</a>. It provides useful stuffs for proc macros.</p>
+<h2><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h2>
+<h3><a class="anchor" aria-hidden="true" id="smart_quote"></a><a href="#smart_quote" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>smart_quote!</h3>
+<ul>
+<li><a href="https://docs.rs/pmutil/0.5.2/pmutil/macro.smart_quote.html">doc</a></li>
+</ul>
+<p>It's a rustfmt-friendly quasi quotter. It exploits the fact that <code>rustfmt</code> can format function-call-like macros.</p>
+<p>It takes two arguments. The first argument is to list variables, and should be wrapped with <code>Vars { }</code>. You can think this as constructing a struct named <code>Vars</code>. It's really the same, as shorthand notation is supported. It means, you can pass</p>
+<pre><code class="hljs css language-rust"><span class="hljs-comment">// type is not required in real code</span>
+<span class="hljs-keyword">let</span> i: Ident = {
+    <span class="hljs-comment">// ..</span>
+};
+<span class="hljs-keyword">let</span> v = {
+    <span class="hljs-comment">// ..</span>
+};
+smart_quote!(Vars {
+    i,
+    TypeName: &amp;v,
+}, {
+    <span class="hljs-comment">// ignore second argument at now</span>
+});
+</code></pre>
+<p>Currently, <code>Vars{}</code> is required even if no variable is passed in. This restriction may be removed in the future.</p>
+<p>The second argument is a template, wrapped with a group (<code>()</code>, <code>[]</code>, <code>{}</code>). In most cases, wrapping with <code>{</code> and <code>}</code> is best.</p>
+<pre><code class="hljs css language-rust">smart_quote!(Vars {
+    i,
+    mtd_name: &amp;method,
+    TypeName: &amp;input.ident,
+}, {
+    <span class="hljs-keyword">impl</span> TypeName {
+        <span class="hljs-keyword">pub</span> <span class="hljs-keyword">const</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">mtd_name</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">usize</span>{
+            i
+        }
+    }
+})
+</code></pre>
+<p>where the method is ident named <code>len</code>, i is an arbitrary value (we use <code>10</code> at here) and TypeName is the name of <code>DeriveInput</code> (we use <code>Enum</code> at here), expands to</p>
+<pre><code class="hljs css language-rust"><span class="hljs-keyword">impl</span> Enum {
+    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">const</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">len</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">usize</span> {
+        <span class="hljs-number">10</span>
+    }
+}
+</code></pre>
+<p>As rustfmt is happy with</p>
+<ul>
+<li>function-call-like macro invokation</li>
+<li>a block containing multiple items</li>
+</ul>
+<p>you can do something like without breaking rustfmt.</p>
+<pre><code class="hljs css language-rust">smart_quote!(Vars {
+    is_body,
+    mtd_name: &amp;method,
+    TypeName: &amp;input.ident,
+}, {
+    <span class="hljs-keyword">impl</span> TypeName {
+        <span class="hljs-keyword">pub</span> <span class="hljs-keyword">const</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">mtd_name</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">usize</span> {
+            i
+        }
+    }
+
+    <span class="hljs-keyword">impl</span> TypeName {
+        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">is</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">bool</span> {
+            is_body
+        }
+    }
+})
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="naming-convention"></a><a href="#naming-convention" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Naming convention</h3>
+<p>I recommend to follow the naming convention of template argument. It means, identifier of a type should be passed in PascalCase although it is passed as a field initialization.</p>
+<h3><a class="anchor" aria-hidden="true" id="quoteparse-and-error-reporting"></a><a href="#quoteparse-and-error-reporting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quote.parse() and error reporting</h3>
+<ul>
+<li><a href="https://docs.rs/pmutil/0.5.2/pmutil/struct.Quote.html#method.parse">doc</a></li>
+</ul>
+<p>You might think quasi quoting is enough and parsing quoted tokens to ast type is just waisting compile time.
+It's true if your project is small. But debugging proc macro is hard. I made 10+ proc macros and you should trust me. It's really hard.</p>
+<p>Let's start with a simple wrong code.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-keyword">use</span> syn::Expr;
+
+<span class="hljs-keyword">let</span> expr: Expr = Quote::new(def_site::&lt;Span&gt;())
+    .quote_with(smart_quote!(
+        Vars {
+        },
+        {
+            <span class="hljs-keyword">impl</span> Type {
+
+            }
+        }
+    ))
+    .parse();
+</code></pre>
+<p>As you generated a wrong token (impl block is not an expression), <code>Quote.parse()</code> will panic, reports the line of <code>smart_quote!</code> invocations and tell you to rerun after setting an environment variable named <code>DBG_DUMP</code> to 1. When you run with it, <code>Quote.parse()</code> will print the tokens you quoted.</p>
+<pre><code class="hljs"><span class="hljs-keyword">error: </span>custom attribute panicked
+ --&gt; ecmascript/codegen/src/decl.rs:7:5
+  |
+7 |     #[emitter]
+  |     ^^^^^^^^^^
+  |
+  = help: message: Quote::parse() failed.
+                          Note: quasi quotting was invoked from:
+                 ecmascript/codegen/macros/src/lib.rs:54:25
+
+          Error from syn: expected expression
+              &gt;&gt;&gt;&gt;&gt;
+                  To get code failed to parse,
+           please set environment variable `DBG_DUMP` and run in again
+              &lt;&lt;&lt;&lt;&lt;
+
+<span class="hljs-keyword">error: </span>aborting due to previous error
+
+<span class="hljs-keyword">error: </span>could not compile `swc_ecma_codegen`.
+</code></pre>
+<p>Yes, I broke code to show the message. With <code>DBG_DUMP=1</code>,</p>
+<pre><code class="hljs"><span class="hljs-keyword">error: </span>custom attribute panicked
+ --&gt; ecmascript/codegen/src/decl.rs:7:5
+  |
+7 |     #[emitter]
+  |     ^^^^^^^^^^
+  |
+  = help: message: Quote::parse() failed.
+                          Note: quasi quotting was invoked from:
+                 ecmascript/codegen/macros/src/lib.rs:54:25
+
+          Error from syn: expected expression
+              &gt;&gt;&gt;&gt;&gt;
+                  impl Type { }
+              &lt;&lt;&lt;&lt;&lt;
+
+<span class="hljs-keyword">error: </span>aborting due to previous error
+
+<span class="hljs-keyword">error: </span>could not compile `swc_ecma_codegen`.
+</code></pre>
+<p>You can see the code, which is clearly not an expression, and fix it.</p>
+<h3><a class="anchor" aria-hidden="true" id="totokensext"></a><a href="#totokensext" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ToTokensExt</h3>
+<ul>
+<li><a href="https://docs.rs/pmutil/0.5.2/pmutil/trait.ToTokensExt.html">doc</a></li>
+</ul>
+<p>If you have an experience of writing a proc macro, you may know <code>proc_macro::TokenStream</code> and <code>proc_macro2::TokenStream</code> interop badly, as name is equal to each other. <code>ToTokensExt</code> helps you.</p>
+<p>It provides a <code>.dump()</code> method, which returns <code>proc_macro2::TokenStream</code> without bringing the name into scope.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-comment">// more imports</span>
+<span class="hljs-keyword">use</span> proc_macro::TokenStream;
+
+<span class="hljs-meta">#[proc_macro_derive(Is, attributes(is))]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">is</span></span>(input: TokenStream) -&gt; TokenStream {
+    <span class="hljs-keyword">let</span> input: DeriveInput = syn::parse(input).expect(<span class="hljs-string">"failed to parse derive input"</span>);
+    <span class="hljs-keyword">let</span> generics: Generics = input.generics.clone();
+
+    <span class="hljs-keyword">let</span> items = <span class="hljs-keyword">match</span> input.data {
+        Data::Enum(e) =&gt; expand(e),
+        _ =&gt; <span class="hljs-built_in">panic!</span>(<span class="hljs-string">"`Is` can be applied only on enums"</span>),
+    };
+
+    ItemImpl {
+        attrs: <span class="hljs-built_in">vec!</span>[],
+        defaultness: <span class="hljs-literal">None</span>,
+        unsafety: <span class="hljs-literal">None</span>,
+        impl_token: <span class="hljs-built_in">Default</span>::default(),
+        generics: <span class="hljs-built_in">Default</span>::default(),
+        trait_: <span class="hljs-literal">None</span>,
+        self_ty: <span class="hljs-built_in">Box</span>::new(Type::Path(TypePath {
+            qself: <span class="hljs-literal">None</span>,
+            path: Path::from(input.ident),
+        })),
+        brace_token: <span class="hljs-built_in">Default</span>::default(),
+        items,
+    }
+    .with_generics(generics)
+    .dump()
+    .into()
+}
+
+</code></pre>
+<p>The method is also useful for debugging as <code>proc_macro2::TokenStream</code> implements Display while ast types from syn do not implement it.</p>
+<h2><a class="anchor" aria-hidden="true" id="macros-built-with-pmutil"></a><a href="#macros-built-with-pmutil" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Macros built with pmutil</h2>
+<p>Lots of macros are built over <a href="https://github.com/kdy1/rust-pmutil">pmutil</a>.</p>
+<p>If you want a macro below to be a standalone crate, please ping me on slack (<a href="https://swc-slackin.herokuapp.com/">slackin for swc</a>) or <a href="https://github.com/swc-project/swc/issues/new">file an issue at github</a>.</p>
+<p>(This is one of the reasons why I'm writing this section)</p>
+<h3><a class="anchor" aria-hidden="true" id="fromvariant-swc"></a><a href="#fromvariant-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FromVariant (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/ast_node/derive.FromVariant.html"><code>#[derive(FromVariant)]</code></a></li>
+</ul>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(Debug, Clone, FromVariant)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Expr</span></span> {
+    Lit(Lit),
+    Ident(Ident),
+}
+
+<span class="hljs-comment">// Generated impls:</span>
+<span class="hljs-keyword">impl</span> <span class="hljs-built_in">From</span>&lt;Lit&gt; <span class="hljs-keyword">for</span> Expr {}
+<span class="hljs-keyword">impl</span> <span class="hljs-built_in">From</span>&lt;Ident&gt; <span class="hljs-keyword">for</span> Expr {}
+</code></pre>
+<p>It uses pmutil like</p>
+<pre><code class="hljs css language-rust"><span class="hljs-comment">// In real code, ItemImpl is inferred</span>
+<span class="hljs-keyword">let</span> from_impl: ItemImpl = Quote::new_call_site()
+    .quote_with(smart_quote!(
+        Vars {
+            VariantType: field.ty,
+            Variant: variant_name,
+            Type: &amp;ident,
+        },
+        {
+            <span class="hljs-keyword">impl</span> <span class="hljs-built_in">From</span>&lt;VariantType&gt; <span class="hljs-keyword">for</span> Type {
+                <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">from</span></span>(v: VariantType) -&gt; <span class="hljs-keyword">Self</span> {
+                    Type::Variant(v)
+                }
+            }
+        }
+    ))
+    .parse();
+</code></pre>
+<p>where <code>VariantType</code> is replaced with the type of the only field of the variant, <code>Variant</code> is replaced with the name of the variant, and Type is replaced with the name of the enum itself.</p>
+<h3><a class="anchor" aria-hidden="true" id="ast_node-swc"></a><a href="#ast_node-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ast_node (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/ast_node/attr.ast_node.html"><code>#[ast_node]</code></a></li>
+</ul>
+<p>Alias for <code>#[derive(Spanned, Fold, Clone, Debug, PartialEq)]</code> for a struct and <code>#[derive(Spanned, Fold, Clone, Debug, PartialEq, FromVariant)]</code> for an enum.</p>
+<h3><a class="anchor" aria-hidden="true" id="fold-visit-swc"></a><a href="#fold-visit-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fold, Visit (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/ast_node/derive.Fold.html"><code>#[derive(Fold)]</code></a></li>
+</ul>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(Fold)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Ident</span></span> {
+    <span class="hljs-keyword">pub</span> span: Span,
+    <span class="hljs-keyword">pub</span> sym: <span class="hljs-built_in">String</span>,
+}
+
+<span class="hljs-meta">#[derive(Fold)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Lit</span></span> {
+    <span class="hljs-keyword">pub</span> span: Span,
+    <span class="hljs-keyword">pub</span> value: <span class="hljs-built_in">String</span>,
+}
+
+<span class="hljs-meta">#[derive(Fold)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Expr</span></span> {
+    Ident(ident),
+    Lit(Str)
+}
+
+
+
+<span class="hljs-comment">// Generated impls:</span>
+<span class="hljs-keyword">impl</span> ::swc_common::FoldWith <span class="hljs-keyword">for</span> Ident {
+    <span class="hljs-comment">// fn fold_children()</span>
+}
+<span class="hljs-keyword">impl</span> ::swc_common::VisitWith <span class="hljs-keyword">for</span> Ident {
+    <span class="hljs-comment">// fn visit_children()</span>
+}
+
+<span class="hljs-keyword">impl</span> ::swc_common::FoldWith <span class="hljs-keyword">for</span> Lit {
+    <span class="hljs-comment">// fn fold_children()</span>
+}
+<span class="hljs-keyword">impl</span> ::swc_common::VisitWith <span class="hljs-keyword">for</span> Lit {
+    <span class="hljs-comment">// fn visit_children()</span>
+}
+
+<span class="hljs-keyword">impl</span> ::swc_common::FoldWith <span class="hljs-keyword">for</span> Expr {
+    <span class="hljs-comment">// fn fold_children()</span>
+}
+<span class="hljs-keyword">impl</span> ::swc_common::VisitWith <span class="hljs-keyword">for</span> Expr {
+    <span class="hljs-comment">// fn visit_children()</span>
+}
+
+</code></pre>
+<p>With specialization, which requires nightly, it becomes an automagical weapon.</p>
+<p>You can collect all identifiers in ast node with 20 lines of code however it is stored (unless you are using <code>#[fold(ignore)]</code>).</p>
+<pre><code class="hljs css language-rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">IdentCollector</span></span> {
+    ids: <span class="hljs-built_in">Vec</span>&lt;Ident&gt;
+}
+
+<span class="hljs-keyword">impl</span> Visit&lt;Ident&gt; <span class="hljs-keyword">for</span> IdentCollector {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">visit</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, i: &amp;Ident) {
+        <span class="hljs-keyword">self</span>.ids.push(i.clone());
+    }
+}
+
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">find_ids</span></span>&lt;T: VisitWith&lt;IdentCollector&gt;&gt;(node: &amp;T) -&gt; <span class="hljs-built_in">Vec</span>&lt;Ident&gt; {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> v = IdentCollector { ids: <span class="hljs-built_in">vec!</span>[] };
+    node.visit_with(&amp;<span class="hljs-keyword">mut</span> v);
+    v.ids
+}
+
+
+<span class="hljs-built_in">assert_eq!</span>(find_ids(<span class="hljs-keyword">box</span> <span class="hljs-built_in">vec!</span>[Expr::Ident(i1), Expr::Lit(lit), Expr::Ident(i2)]) , <span class="hljs-built_in">vec!</span>[i1, i2]);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="spanned-swc"></a><a href="#spanned-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spanned (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/ast_node/derive.Spanned.html"><code>#[derive(Spanned)]</code></a></li>
+</ul>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(Spanned)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Ident</span></span> {
+    <span class="hljs-keyword">pub</span> span: Span,
+    <span class="hljs-keyword">pub</span> symbol: <span class="hljs-built_in">String</span>,
+}
+
+<span class="hljs-meta">#[derive(Spanned)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Lit</span></span> {
+    <span class="hljs-keyword">pub</span> span: Span,
+    <span class="hljs-keyword">pub</span> value: <span class="hljs-built_in">String</span>,
+}
+
+<span class="hljs-meta">#[derive(Spanned)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Expr</span></span> {
+    Lit(Lit),
+    Ident(Ident)
+}
+
+<span class="hljs-comment">// Generated impls:</span>
+<span class="hljs-keyword">impl</span> ::swc_common::Spannned <span class="hljs-keyword">for</span> Ident {}
+<span class="hljs-keyword">impl</span> ::swc_common::Spannned <span class="hljs-keyword">for</span> Lit {}
+<span class="hljs-keyword">impl</span> ::swc_common::Spannned <span class="hljs-keyword">for</span> Expr {}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="enum_kind-swc"></a><a href="#enum_kind-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enum_kind (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/enum_kind/derive.Kind.html"><code>#[derive(Kind)]</code></a></li>
+</ul>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[macro_use]</span>
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> enum_kind;
+
+<span class="hljs-comment">/// You can split attributes if you want.</span>
+<span class="hljs-meta">#[derive(Kind)]</span>
+<span class="hljs-meta">#[kind(functions(is_a = <span class="hljs-meta-string">"bool"</span>, is_b = <span class="hljs-meta-string">"bool"</span>))]</span>
+<span class="hljs-meta">#[kind(functions(is_a_or_b = <span class="hljs-meta-string">"bool"</span>, num = <span class="hljs-meta-string">"u8"</span>))]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">E</span></span> {
+    <span class="hljs-meta">#[kind(is_a, is_a_or_b, num = <span class="hljs-meta-string">"1"</span>)]</span>
+    A,
+    <span class="hljs-comment">/// You can split attributes if you want.</span>
+    <span class="hljs-meta">#[kind(is_b)]</span>
+    <span class="hljs-meta">#[kind(is_a_or_b)]</span>
+    <span class="hljs-meta">#[kind(num = <span class="hljs-meta-string">"2"</span>)]</span>
+    B(<span class="hljs-built_in">u8</span>),
+    <span class="hljs-comment">/// Default value of bool is false if not specified and true if specified.</span>
+    <span class="hljs-comment">///</span>
+    <span class="hljs-comment">/// Both struct like variant and tuple like variant are supported.</span>
+    <span class="hljs-meta">#[kind(num = <span class="hljs-meta-string">"3"</span>)]</span>
+    C {},
+}
+
+<span class="hljs-built_in">assert!</span>(E::A.is_a() &amp;&amp; E::A.is_a_or_b() &amp;&amp; !E::A.is_b());
+<span class="hljs-built_in">assert_eq!</span>(E::A.num(), <span class="hljs-number">1</span>);
+
+<span class="hljs-built_in">assert!</span>(!E::B(<span class="hljs-number">0</span>).is_a() &amp;&amp; E::B(<span class="hljs-number">0</span>).is_a_or_b() &amp;&amp; E::B(<span class="hljs-number">0</span>).is_b());
+<span class="hljs-built_in">assert_eq!</span>(E::B(<span class="hljs-number">0</span>).num(), <span class="hljs-number">2</span>);
+
+<span class="hljs-built_in">assert!</span>(!E::C {}.is_a() &amp;&amp; !E::C {}.is_a_or_b() &amp;&amp; !E::C {}.is_b());
+<span class="hljs-built_in">assert_eq!</span>(E::C {}.num(), <span class="hljs-number">3</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="string_enum-swc"></a><a href="#string_enum-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>string_enum (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/string_enum/derive.StringEnum.html">#[derive(StringEnum)]</a></li>
+</ul>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(StringEnum)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Tokens</span></span> {
+    <span class="hljs-comment">/// `a`</span>
+    A,
+    <span class="hljs-comment">/// `bar`</span>
+    B,
+}
+
+<span class="hljs-comment">// Generated:</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// pub fn as_str(&amp;self) -&gt; &amp;'static str</span>
+<span class="hljs-comment">// impl serde::Serilaize</span>
+<span class="hljs-comment">// impl serde::Deserilaize</span>
+<span class="hljs-comment">// impl FromStr</span>
+<span class="hljs-comment">// impl Debug</span>
+<span class="hljs-comment">// impl Display</span>
+
+<span class="hljs-built_in">assert_eq!</span>(Tokens::A.as_str(), <span class="hljs-string">"a"</span>);
+<span class="hljs-built_in">assert_eq!</span>(Tokens::B.as_str(), <span class="hljs-string">"bar"</span>);
+
+<span class="hljs-built_in">assert_eq!</span>(Tokens::A.to_string(), <span class="hljs-string">"a"</span>);
+<span class="hljs-built_in">assert_eq!</span>(<span class="hljs-built_in">format!</span>(<span class="hljs-string">"{:?}"</span>, Tokens::A), <span class="hljs-built_in">format!</span>(<span class="hljs-string">"{:?}"</span>, <span class="hljs-string">"a"</span>));
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="swc_ecma_parser_macros-swc"></a><a href="#swc_ecma_parser_macros-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>swc_ecma_parser_macros (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/swc_ecma_parser_macros/attr.parser.html"><code>#[parser]</code></a></li>
+</ul>
+<p>I'll show you the code and then tell how it works.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[parser]</span>
+<span class="hljs-keyword">impl</span>&lt;<span class="hljs-symbol">'a</span>, I: Tokens&gt; Parser&lt;<span class="hljs-symbol">'a</span>, I&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">parse_yield_expr</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) -&gt; PResult&lt;<span class="hljs-symbol">'a</span>, <span class="hljs-built_in">Box</span>&lt;Expr&gt;&gt; {
+        <span class="hljs-keyword">let</span> start = cur_pos!();
+
+        assert_and_bump!(<span class="hljs-string">"yield"</span>);
+        <span class="hljs-built_in">debug_assert!</span>(<span class="hljs-keyword">self</span>.ctx().in_generator);
+
+        <span class="hljs-comment">// Spec says</span>
+        <span class="hljs-comment">// YieldExpression cannot be used within the FormalParameters of a generator</span>
+        <span class="hljs-comment">// function because any expressions that are part of FormalParameters are</span>
+        <span class="hljs-comment">// evaluated before the resulting generator object is in a resumable state.</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.ctx().in_parameters {
+            syntax_error!(<span class="hljs-keyword">self</span>.input.prev_span(), SyntaxError::YieldParamInGen)
+        }
+
+        <span class="hljs-keyword">if</span> is!(<span class="hljs-string">';'</span>) || (!is!(<span class="hljs-string">'*'</span>) &amp;&amp; !cur!(<span class="hljs-literal">false</span>).map(Token::starts_expr).unwrap_or(<span class="hljs-literal">true</span>)) {
+            <span class="hljs-literal">Ok</span>(<span class="hljs-built_in">Box</span>::new(Expr::Yield(YieldExpr {
+                span: span!(start),
+                arg: <span class="hljs-literal">None</span>,
+                delegate: <span class="hljs-literal">false</span>,
+            })))
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">let</span> has_star = eat!(<span class="hljs-string">'*'</span>);
+            <span class="hljs-keyword">let</span> arg = <span class="hljs-keyword">self</span>.parse_assignment_expr()?;
+
+            <span class="hljs-literal">Ok</span>(<span class="hljs-built_in">Box</span>::new(Expr::Yield(YieldExpr {
+                span: span!(start),
+                arg: <span class="hljs-literal">Some</span>(arg),
+                delegate: has_star,
+            })))
+        }
+    }
+}
+</code></pre>
+<p>Did you get it? As <code>Input</code> is stored in <code>Parser</code>, you should pass an instance of <code>Parser</code> into macro, so code to consume a token should be</p>
+<pre><code class="hljs css language-rust">expect!(<span class="hljs-keyword">self</span>, <span class="hljs-string">"yield"</span>);
+</code></pre>
+<p>But <code>#[parser]</code> injects self to the code automatically. It knows the list of macros that accept <code>Parser</code> as a first argument and inject self into the macro call.</p>
+<h3><a class="anchor" aria-hidden="true" id="swc_ecma_codegen_macros-swc"></a><a href="#swc_ecma_codegen_macros-swc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>swc_ecma_codegen_macros (swc)</h3>
+<ul>
+<li>doc: <a href="https://swc-project.github.io/rustdoc/swc_ecma_codegen_macros/attr.emitter.html"><code>#[emitter]</code></a></li>
+</ul>
+<pre><code class="hljs css language-rust"><span class="hljs-keyword">impl</span> Emitter {
+    <span class="hljs-meta">#[emitter]</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">emit_module</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, m: &amp;Module) -&gt; <span class="hljs-built_in">Result</span> {
+        <span class="hljs-comment">// ..</span>
+    }
+}
+</code></pre>
+<p>becomes</p>
+<pre><code class="hljs css language-rust"><span class="hljs-keyword">impl</span> Emitter {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">emit_module</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, m: &amp;Module) -&gt; <span class="hljs-built_in">Result</span> {
+        <span class="hljs-comment">// ..</span>
+    }
+}
+
+<span class="hljs-keyword">impl</span> Node <span class="hljs-keyword">for</span> Module {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">emit_with</span></span>(&amp;<span class="hljs-keyword">self</span>, emitter: &amp;<span class="hljs-keyword">mut</span> Emitter) -&gt; <span class="hljs-built_in">Result</span> {
+        emitter.emit_module(<span class="hljs-keyword">self</span>)
+    }
+}
+</code></pre>
+<p>Thus <code>emit!</code> works for any emittable types. <code>emit!</code> is defined as</p>
+<pre><code class="hljs css language-rust"><span class="hljs-built_in">macro_rules!</span> emit {
+    ($emitter:expr, $e:expr) =&gt; {{
+        crate::Node::emit_with(&amp;$e, $emitter)?;
+    }};
+}
+</code></pre>
+<p>As the macro creates an impl block from a method, it reduced the amount of code drastically. (Writing impl Node for T every time is cumbersome.)</p>
+<h3><a class="anchor" aria-hidden="true" id="is-macro"></a><a href="#is-macro" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>is-macro</h3>
+<ul>
+<li>Repository: <a href="https://github.com/kdy1/is-macro">https://github.com/kdy1/is-macro</a></li>
+</ul>
+<p><code>is-macro</code> is a proc macro to generate methods for enum to allow using it like <code>Option</code> / <code>Result</code>.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-keyword">use</span> is_macro::Is;
+<span class="hljs-meta">#[derive(Debug, Is)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Enum</span></span>&lt;T&gt; {
+    A,
+    B(T),
+    C(<span class="hljs-built_in">Option</span>&lt;T&gt;),
+}
+
+<span class="hljs-comment">// Generated methods:</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// is_a(&amp;self), is_b(&amp;self), is_c(&amp;self)</span>
+<span class="hljs-comment">// b(self) -&gt; Option&lt;T&gt;, c(self) -&gt; Option&lt;Option&lt;T&gt;&gt;</span>
+<span class="hljs-comment">// expect_b(self) -&gt; T, expect_c(self) -&gt; Option&lt;T&gt;</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-comment">// Rust's type inference cannot handle this.</span>
+<span class="hljs-built_in">assert!</span>(Enum::&lt;()&gt;::A.is_a());
+
+<span class="hljs-built_in">assert_eq!</span>(Enum::B(<span class="hljs-built_in">String</span>::from(<span class="hljs-string">"foo"</span>)).b(), <span class="hljs-literal">Some</span>(<span class="hljs-built_in">String</span>::from(<span class="hljs-string">"foo"</span>)));
+
+<span class="hljs-built_in">assert_eq!</span>(Enum::B(<span class="hljs-built_in">String</span>::from(<span class="hljs-string">"foo"</span>)).expect_b(), <span class="hljs-built_in">String</span>::from(<span class="hljs-string">"foo"</span>));
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="st-map"></a><a href="#st-map" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>st-map</h3>
+<ul>
+<li>Repository: <a href="https://github.com/kdy1/rust-static-map">https://github.com/kdy1/rust-static-map</a></li>
+</ul>
+<p>This macro adds <code>.iter()</code>, <code>.iter_mut()</code>, <code>.into_iter()</code>, <code>.map(|k, v| {})</code>, <code>.map_values(|v| {})</code> to a map-like structs.
+Map-like means that all fields have the same type.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(Debug, PartialEq, Default, StaticMap)]</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BrowserData</span></span>&lt;T: <span class="hljs-built_in">Default</span>&gt; {
+    chrome: T,
+    safari: T,
+    android: T,
+}
+
+ <span class="hljs-comment">// Example of using generated methods.</span>
+ {
+    <span class="hljs-comment">// .iter(), .iter_mut(), .into_iter()</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> data = BrowserData {
+        chrome: <span class="hljs-literal">true</span>,
+        safari: <span class="hljs-literal">false</span>,
+        android: <span class="hljs-literal">true</span>,
+    };
+    <span class="hljs-built_in">assert_eq!</span>(
+        data.iter().collect::&lt;<span class="hljs-built_in">Vec</span>&lt;_&gt;&gt;(),
+        <span class="hljs-built_in">vec!</span>[(<span class="hljs-string">"chrome"</span>, &amp;<span class="hljs-literal">true</span>), (<span class="hljs-string">"safari"</span>, &amp;<span class="hljs-literal">false</span>), (<span class="hljs-string">"android"</span>, &amp;<span class="hljs-literal">true</span>),]
+    );
+
+    <span class="hljs-built_in">assert_eq!</span>(
+        data.iter_mut().collect::&lt;<span class="hljs-built_in">Vec</span>&lt;_&gt;&gt;(),
+        <span class="hljs-built_in">vec!</span>[
+            (<span class="hljs-string">"chrome"</span>, &amp;<span class="hljs-keyword">mut</span> <span class="hljs-literal">true</span>),
+            (<span class="hljs-string">"safari"</span>, &amp;<span class="hljs-keyword">mut</span> <span class="hljs-literal">false</span>),
+            (<span class="hljs-string">"android"</span>, &amp;<span class="hljs-keyword">mut</span> <span class="hljs-literal">true</span>),
+        ]
+    );
+
+    <span class="hljs-built_in">assert_eq!</span>(
+        data.into_iter().collect::&lt;<span class="hljs-built_in">Vec</span>&lt;_&gt;&gt;(),
+        <span class="hljs-built_in">vec!</span>[(<span class="hljs-string">"chrome"</span>, <span class="hljs-literal">true</span>), (<span class="hljs-string">"safari"</span>, <span class="hljs-literal">false</span>), (<span class="hljs-string">"android"</span>, <span class="hljs-literal">true</span>),]
+    );
+ }
+
+ {
+    <span class="hljs-comment">// .map(), .map_values()</span>
+
+    <span class="hljs-keyword">let</span> data = BrowserData {
+        chrome: <span class="hljs-number">20000</span>,
+        safari: <span class="hljs-number">10000</span>,
+        ..<span class="hljs-built_in">Default</span>::default()
+    };
+
+    <span class="hljs-built_in">assert_eq!</span>(
+        data.map_value(|v| v &gt; <span class="hljs-number">15000</span>),
+        BrowserData {
+            chrome: <span class="hljs-literal">true</span>,
+            safari: <span class="hljs-literal">false</span>,
+            android: <span class="hljs-literal">false</span>,
+        }
+    );
+ }
+</code></pre>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><div class="fb-like" data-href="https://swc.rs/blog/2020/01/04/pmutil" data-layout="standard" data-share="true" data-width="225" data-show-faces="false"></div></div><div class="blogSocialSectionItem"><div class="fb-comments" data-href="https://swc.rs/blog/2020/01/04/pmutil" data-width="100%" data-numposts="5" data-order-by="time"></div></div></div></div><div class="blog-recent"><a class="button" href="/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#features">Features</a><ul class="toc-headings"><li><a href="#smart_quote">smart_quote!</a></li><li><a href="#naming-convention">Naming convention</a></li><li><a href="#quoteparse-and-error-reporting">Quote.parse() and error reporting</a></li><li><a href="#totokensext">ToTokensExt</a></li></ul></li><li><a href="#macros-built-with-pmutil">Macros built with pmutil</a><ul class="toc-headings"><li><a href="#fromvariant-swc">FromVariant (swc)</a></li><li><a href="#ast_node-swc">ast_node (swc)</a></li><li><a href="#fold-visit-swc">Fold, Visit (swc)</a></li><li><a href="#spanned-swc">Spanned (swc)</a></li><li><a href="#enum_kind-swc">enum_kind (swc)</a></li><li><a href="#string_enum-swc">string_enum (swc)</a></li><li><a href="#swc_ecma_parser_macros-swc">swc_ecma_parser_macros (swc)</a></li><li><a href="#swc_ecma_codegen_macros-swc">swc_ecma_codegen_macros (swc)</a></li><li><a href="#is-macro">is-macro</a></li><li><a href="#st-map">st-map</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://raw.githubusercontent.com/swc-project/logo/master/swc.png" alt="swc" width="66"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Installation</a><a href="/docs/configuring-swc.html">Configuring swc</a><a href="/docs/usage-swc-cli.html">Usage</a><a href="/docs/migrating-from-babel-core.html">Migration</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/swc-compiler" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://swc-slackin.herokuapp.com/">Slackin for swc</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/swc-project/swc">GitHub</a><a class="github-button" href="https://github.com/swc-project/swc" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 The swc project developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.fbAsyncInit = function() {FB.init({appId:'3577925395580880',xfbml:true,version:'v2.7'});};(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/en_US/sdk.js';fjs.parentNode.insertBefore(js, fjs);}(document, 'script','facebook-jssdk'));
+                </script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '5b6acdf7dc8baaa86317236bb5e2bb9e',
+                indexName: 'swc-project',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
