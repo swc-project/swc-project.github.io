@@ -547,13 +547,6 @@
         <summary type="html"><![CDATA[swc is fast. Very fast. It's 18x faster than babel on a single-core benchmark, and on a parallel benchmark, it's 68x faster than babel on a 4 core (8 HT) machine. Why? Just because it's written in rust? No. Its fundamental design differs from any other tool.]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.21]]></title>
-        <id>Changelog: swc v1.1.21</id>
-        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.21"/>
-        <updated>2020-02-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Improvements]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.22]]></title>
         <id>Changelog: swc v1.1.22</id>
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.22"/>
@@ -566,6 +559,13 @@
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.23"/>
         <updated>2020-02-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hotfix - optimizer]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.1.21]]></title>
+        <id>Changelog: swc v1.1.21</id>
+        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.21"/>
+        <updated>2020-02-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Improvements]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.24]]></title>
