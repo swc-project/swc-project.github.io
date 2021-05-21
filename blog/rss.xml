@@ -8,9 +8,9 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Changelog: swc v1.2.55]]></title>
+            <title><![CDATA[Changelog: swc v1.2.57]]></title>
             <link>https://swc.rs/blog/2021/05/11/swc-1.2.57</link>
-            <guid>Changelog: swc v1.2.55</guid>
+            <guid>Changelog: swc v1.2.57</guid>
             <pubDate>Tue, 11 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Imrpovements]]></description>
         </item>
