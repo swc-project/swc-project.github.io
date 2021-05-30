@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swc.rs/blog</id>
     <title>swc Blog</title>
-    <updated>2021-05-21T00:00:00.000Z</updated>
+    <updated>2021-05-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swc.rs/blog"/>
     <subtitle>swc Blog</subtitle>
     <icon>https://swc.rs/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.59]]></title>
+        <id>Changelog: swc v1.2.59</id>
+        <link href="https://swc.rs/blog/2021/05/30/swc-1.2.59"/>
+        <updated>2021-05-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Bugfixes]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.58]]></title>
         <id>Changelog: swc v1.2.58</id>
@@ -610,13 +617,6 @@
         <summary type="html"><![CDATA[swc is fast. Very fast. It's 18x faster than babel on a single-core benchmark, and on a parallel benchmark, it's 68x faster than babel on a 4 core (8 HT) machine. Why? Just because it's written in rust? No. Its fundamental design differs from any other tool.]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.21]]></title>
-        <id>Changelog: swc v1.1.21</id>
-        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.21"/>
-        <updated>2020-02-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Improvements]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.22]]></title>
         <id>Changelog: swc v1.1.22</id>
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.22"/>
@@ -624,11 +624,11 @@
         <summary type="html"><![CDATA[Improvements]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.23 - hotfix]]></title>
-        <id>Changelog: swc v1.1.23 - hotfix</id>
-        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.23"/>
+        <title type="html"><![CDATA[Changelog: swc v1.1.21]]></title>
+        <id>Changelog: swc v1.1.21</id>
+        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.21"/>
         <updated>2020-02-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Hotfix - optimizer]]></summary>
+        <summary type="html"><![CDATA[Improvements]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.24]]></title>
@@ -636,6 +636,13 @@
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.24"/>
         <updated>2020-02-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Features]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.1.23 - hotfix]]></title>
+        <id>Changelog: swc v1.1.23 - hotfix</id>
+        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.23"/>
+        <updated>2020-02-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hotfix - optimizer]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.19]]></title>
