@@ -131,7 +131,7 @@
             <link>https://swc.rs/blog/2020/12/30/swc-1.2.43</link>
             <guid>Changelog: swc v1.2.43</guid>
             <pubDate>Wed, 30 Dec 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[New platforms (1244)]]></description>
+            <description><![CDATA[New platforms (#1244)]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.42]]></title>
@@ -740,28 +740,28 @@
             <link>https://swc.rs/blog/2019/12/29/swc-1.1.10</link>
             <guid>Changelog: swc v1.1.10: preset-env</guid>
             <pubDate>Sun, 29 Dec 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[preset-env (421)]]></description>
+            <description><![CDATA[preset-env (#421)]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.9]]></title>
             <link>https://swc.rs/blog/2019/12/25/swc-1.1.9</link>
             <guid>Changelog: swc v1.1.9</guid>
             <pubDate>Wed, 25 Dec 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Legacy decorator (421)]]></description>
+            <description><![CDATA[Legacy decorator (#421)]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.8]]></title>
             <link>https://swc.rs/blog/2019/12/24/swc-1.1.8</link>
             <guid>Changelog: swc v1.1.8</guid>
             <pubDate>Tue, 24 Dec 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Optional Chaining (525)]]></description>
+            <description><![CDATA[Optional Chaining (#525)]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.7]]></title>
             <link>https://swc.rs/blog/2019/12/21/swc-1.1.7</link>
             <guid>Changelog: swc v1.1.7</guid>
             <pubDate>Sat, 21 Dec 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Statement Expression type (512)]]></description>
+            <description><![CDATA[Statement Expression type (#512)]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.6]]></title>
@@ -789,14 +789,14 @@
             <link>https://swc.rs/blog/2019/12/04/swc-1.1.3</link>
             <guid>Changelog: swc v1.1.3</guid>
             <pubDate>Wed, 04 Dec 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[try catch(483]]></description>
+            <description><![CDATA[try catch(#483]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.2]]></title>
             <link>https://swc.rs/blog/2019/12/02/swc-1.1.2</link>
             <guid>Changelog: swc v1.1.2</guid>
             <pubDate>Mon, 02 Dec 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Fixed a parser bug (480)]]></description>
+            <description><![CDATA[Fixed a parser bug (#480)]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.1]]></title>

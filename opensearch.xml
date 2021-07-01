@@ -7,5 +7,5 @@
   <Image width="16" height="16" type="image/x-icon">https://swc.rs/img/favicon.png</Image>
   <Url type="text/html" method="get" template="https://swc.rs/search?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://swc.rs/opensearch.xml" />
-  <moz:SearchForm>https://swc.rs</moz:SearchForm>
+  <moz:SearchForm>https://swc.rs/</moz:SearchForm>
 </OpenSearchDescription>
