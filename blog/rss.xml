@@ -4,9 +4,16 @@
         <title>swc Blog</title>
         <link>https://swc.rs/blog</link>
         <description>swc Blog</description>
-        <lastBuildDate>Sun, 27 Jun 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 05 Jul 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Changelog: swc v1.2.63]]></title>
+            <link>https://swc.rs/blog/2021/07/05/swc-1.2.63</link>
+            <guid>Changelog: swc v1.2.63</guid>
+            <pubDate>Mon, 05 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Bugfixes]]></description>
+        </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.62]]></title>
             <link>https://swc.rs/blog/2021/06/27/swc-1.2.62</link>
@@ -190,16 +197,16 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Hotfix: swc v1.2.34]]></title>
-            <link>https://swc.rs/blog/2020/09/24/swc-1.2.34</link>
-            <guid>Hotfix: swc v1.2.34</guid>
+            <title><![CDATA[ChangeLog: swc v1.2.33]]></title>
+            <link>https://swc.rs/blog/2020/09/24/swc-1.2.33</link>
+            <guid>ChangeLog: swc v1.2.33</guid>
             <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[ChangeLog: swc v1.2.33]]></title>
-            <link>https://swc.rs/blog/2020/09/24/swc-1.2.33</link>
-            <guid>ChangeLog: swc v1.2.33</guid>
+            <title><![CDATA[Hotfix: swc v1.2.34]]></title>
+            <link>https://swc.rs/blog/2020/09/24/swc-1.2.34</link>
+            <guid>Hotfix: swc v1.2.34</guid>
             <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
