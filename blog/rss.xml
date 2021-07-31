@@ -260,18 +260,18 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Hotfix: swc v1.2.26]]></title>
-            <link>https://swc.rs/blog/2020/09/11/swc-1.2.26</link>
-            <guid>Hotfix: swc v1.2.26</guid>
-            <pubDate>Fri, 11 Sep 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Hotfix]]></description>
-        </item>
-        <item>
             <title><![CDATA[Changelog: swc v1.2.25]]></title>
             <link>https://swc.rs/blog/2020/09/11/swc-1.2.25</link>
             <guid>Changelog: swc v1.2.25</guid>
             <pubDate>Fri, 11 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Hotfix: swc v1.2.26]]></title>
+            <link>https://swc.rs/blog/2020/09/11/swc-1.2.26</link>
+            <guid>Hotfix: swc v1.2.26</guid>
+            <pubDate>Fri, 11 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hotfix]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.23]]></title>
@@ -694,18 +694,18 @@
             <description><![CDATA[Features]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.1.19]]></title>
-            <link>https://swc.rs/blog/2020/02/07/swc-1.1.19</link>
-            <guid>Changelog: swc v1.1.19</guid>
-            <pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[New features]]></description>
-        </item>
-        <item>
             <title><![CDATA[Changelog: swc v1.1.20]]></title>
             <link>https://swc.rs/blog/2020/02/07/swc-1.1.20</link>
             <guid>Changelog: swc v1.1.20</guid>
             <pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Improvements]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Changelog: swc v1.1.19]]></title>
+            <link>https://swc.rs/blog/2020/02/07/swc-1.1.19</link>
+            <guid>Changelog: swc v1.1.19</guid>
+            <pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.17]]></title>
