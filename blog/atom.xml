@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swc.rs/blog</id>
     <title>swc Blog</title>
-    <updated>2021-08-02T00:00:00.000Z</updated>
+    <updated>2021-08-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swc.rs/blog"/>
     <subtitle>swc Blog</subtitle>
     <icon>https://swc.rs/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.72]]></title>
+        <id>Changelog: swc v1.2.72</id>
+        <link href="https://swc.rs/blog/2021/08/04/swc-1.2.72"/>
+        <updated>2021-08-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/171?closed=1]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.71]]></title>
         <id>Changelog: swc v1.2.71</id>
@@ -547,16 +554,16 @@
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.42]]></title>
-        <id>Changelog: swc v1.1.42</id>
-        <link href="https://swc.rs/blog/2020/05/05/swc-1.1.42"/>
+        <title type="html"><![CDATA[Changelog: swc v1.1.41]]></title>
+        <id>Changelog: swc v1.1.41</id>
+        <link href="https://swc.rs/blog/2020/05/05/swc-1.1.41"/>
         <updated>2020-05-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.41]]></title>
-        <id>Changelog: swc v1.1.41</id>
-        <link href="https://swc.rs/blog/2020/05/05/swc-1.1.41"/>
+        <title type="html"><![CDATA[Changelog: swc v1.1.42]]></title>
+        <id>Changelog: swc v1.1.42</id>
+        <link href="https://swc.rs/blog/2020/05/05/swc-1.1.42"/>
         <updated>2020-05-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
