@@ -4,9 +4,16 @@
         <title>swc Blog</title>
         <link>https://swc.rs/blog</link>
         <description>swc Blog</description>
-        <lastBuildDate>Sun, 01 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Changelog: swc v1.2.71]]></title>
+            <link>https://swc.rs/blog/2021/08/02/swc-1.2.71</link>
+            <guid>Changelog: swc v1.2.71</guid>
+            <pubDate>Mon, 02 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/173?closed=1]]></description>
+        </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.70]]></title>
             <link>https://swc.rs/blog/2021/08/01/swc-1.2.70</link>
@@ -540,16 +547,16 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.1.41]]></title>
-            <link>https://swc.rs/blog/2020/05/05/swc-1.1.41</link>
-            <guid>Changelog: swc v1.1.41</guid>
+            <title><![CDATA[Changelog: swc v1.1.42]]></title>
+            <link>https://swc.rs/blog/2020/05/05/swc-1.1.42</link>
+            <guid>Changelog: swc v1.1.42</guid>
             <pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.1.42]]></title>
-            <link>https://swc.rs/blog/2020/05/05/swc-1.1.42</link>
-            <guid>Changelog: swc v1.1.42</guid>
+            <title><![CDATA[Changelog: swc v1.1.41]]></title>
+            <link>https://swc.rs/blog/2020/05/05/swc-1.1.41</link>
+            <guid>Changelog: swc v1.1.41</guid>
             <pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
