@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swc.rs/blog</id>
     <title>swc Blog</title>
-    <updated>2021-08-04T00:00:00.000Z</updated>
+    <updated>2021-08-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swc.rs/blog"/>
     <subtitle>swc Blog</subtitle>
     <icon>https://swc.rs/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.75]]></title>
+        <id>Changelog: swc v1.2.75</id>
+        <link href="https://swc.rs/blog/2021/08/08/swc-1.2.75"/>
+        <updated>2021-08-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/176?closed=1]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.72]]></title>
         <id>Changelog: swc v1.2.72</id>
@@ -253,6 +260,13 @@
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[ChangeLog: swc v1.2.33]]></title>
+        <id>ChangeLog: swc v1.2.33</id>
+        <link href="https://swc.rs/blog/2020/09/24/swc-1.2.33"/>
+        <updated>2020-09-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Bugfixes]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Hotfix: swc v1.2.34]]></title>
         <id>Hotfix: swc v1.2.34</id>
         <link href="https://swc.rs/blog/2020/09/24/swc-1.2.34"/>
@@ -260,10 +274,10 @@
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[ChangeLog: swc v1.2.33]]></title>
-        <id>ChangeLog: swc v1.2.33</id>
-        <link href="https://swc.rs/blog/2020/09/24/swc-1.2.33"/>
-        <updated>2020-09-24T00:00:00.000Z</updated>
+        <title type="html"><![CDATA[ChangeLog: swc v1.2.32]]></title>
+        <id>ChangeLog: swc v1.2.32</id>
+        <link href="https://swc.rs/blog/2020/09/22/swc-1.2.32"/>
+        <updated>2020-09-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
@@ -272,13 +286,6 @@
         <link href="https://swc.rs/blog/2020/09/22/swc-1.2.31"/>
         <updated>2020-09-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Domain change]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ChangeLog: swc v1.2.32]]></title>
-        <id>ChangeLog: swc v1.2.32</id>
-        <link href="https://swc.rs/blog/2020/09/22/swc-1.2.32"/>
-        <updated>2020-09-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[ChangeLog: swc v1.2.30]]></title>

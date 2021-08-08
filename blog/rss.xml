@@ -4,9 +4,16 @@
         <title>swc Blog</title>
         <link>https://swc.rs/blog</link>
         <description>swc Blog</description>
-        <lastBuildDate>Wed, 04 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Changelog: swc v1.2.75]]></title>
+            <link>https://swc.rs/blog/2021/08/08/swc-1.2.75</link>
+            <guid>Changelog: swc v1.2.75</guid>
+            <pubDate>Sun, 08 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/176?closed=1]]></description>
+        </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.72]]></title>
             <link>https://swc.rs/blog/2021/08/04/swc-1.2.72</link>
@@ -253,6 +260,13 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
+            <title><![CDATA[ChangeLog: swc v1.2.33]]></title>
+            <link>https://swc.rs/blog/2020/09/24/swc-1.2.33</link>
+            <guid>ChangeLog: swc v1.2.33</guid>
+            <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Bugfixes]]></description>
+        </item>
+        <item>
             <title><![CDATA[Hotfix: swc v1.2.34]]></title>
             <link>https://swc.rs/blog/2020/09/24/swc-1.2.34</link>
             <guid>Hotfix: swc v1.2.34</guid>
@@ -260,10 +274,10 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[ChangeLog: swc v1.2.33]]></title>
-            <link>https://swc.rs/blog/2020/09/24/swc-1.2.33</link>
-            <guid>ChangeLog: swc v1.2.33</guid>
-            <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
+            <title><![CDATA[ChangeLog: swc v1.2.32]]></title>
+            <link>https://swc.rs/blog/2020/09/22/swc-1.2.32</link>
+            <guid>ChangeLog: swc v1.2.32</guid>
+            <pubDate>Tue, 22 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
@@ -272,13 +286,6 @@
             <guid>ChangeLog: swc v1.2.31</guid>
             <pubDate>Tue, 22 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Domain change]]></description>
-        </item>
-        <item>
-            <title><![CDATA[ChangeLog: swc v1.2.32]]></title>
-            <link>https://swc.rs/blog/2020/09/22/swc-1.2.32</link>
-            <guid>ChangeLog: swc v1.2.32</guid>
-            <pubDate>Tue, 22 Sep 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
             <title><![CDATA[ChangeLog: swc v1.2.30]]></title>
