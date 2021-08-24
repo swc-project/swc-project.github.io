@@ -4,9 +4,16 @@
         <title>swc Blog</title>
         <link>https://swc.rs/blog</link>
         <description>swc Blog</description>
-        <lastBuildDate>Fri, 20 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Changelog: swc v1.2.81]]></title>
+            <link>https://swc.rs/blog/2021/08/25/swc-1.2.81</link>
+            <guid>Changelog: swc v1.2.81</guid>
+            <pubDate>Wed, 25 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/182?closed=1]]></description>
+        </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.80]]></title>
             <link>https://swc.rs/blog/2021/08/20/swc-1.2.80</link>
