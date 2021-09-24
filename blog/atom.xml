@@ -820,18 +820,18 @@
         <summary type="html"><![CDATA[Improvements]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.23 - hotfix]]></title>
-        <id>Changelog: swc v1.1.23 - hotfix</id>
-        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.23"/>
-        <updated>2020-02-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Hotfix - optimizer]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.22]]></title>
         <id>Changelog: swc v1.1.22</id>
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.22"/>
         <updated>2020-02-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Improvements]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.1.23 - hotfix]]></title>
+        <id>Changelog: swc v1.1.23 - hotfix</id>
+        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.23"/>
+        <updated>2020-02-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hotfix - optimizer]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.24]]></title>
