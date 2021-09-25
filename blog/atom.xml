@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swc.rs/blog</id>
     <title>swc Blog</title>
-    <updated>2021-09-23T00:00:00.000Z</updated>
+    <updated>2021-09-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swc.rs/blog"/>
     <subtitle>swc Blog</subtitle>
     <icon>https://swc.rs/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.91]]></title>
+        <id>Changelog: swc v1.2.91</id>
+        <link href="https://swc.rs/blog/2021/09/25/swc-1.2.91"/>
+        <updated>2021-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/192?closed=1]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.90]]></title>
         <id>Changelog: swc v1.2.90</id>
@@ -617,16 +624,16 @@
         <summary type="html"><![CDATA[Integration tests]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hotfix: swc v1.1.50]]></title>
-        <id>Hotfix: swc v1.1.50</id>
-        <link href="https://swc.rs/blog/2020/05/28/swc-1.1.50"/>
+        <title type="html"><![CDATA[Changelog: swc v1.1.49]]></title>
+        <id>Changelog: swc v1.1.49</id>
+        <link href="https://swc.rs/blog/2020/05/28/swc-1.1.49"/>
         <updated>2020-05-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.49]]></title>
-        <id>Changelog: swc v1.1.49</id>
-        <link href="https://swc.rs/blog/2020/05/28/swc-1.1.49"/>
+        <title type="html"><![CDATA[Hotfix: swc v1.1.50]]></title>
+        <id>Hotfix: swc v1.1.50</id>
+        <link href="https://swc.rs/blog/2020/05/28/swc-1.1.50"/>
         <updated>2020-05-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
