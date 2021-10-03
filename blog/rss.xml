@@ -4,9 +4,16 @@
         <title>swc Blog</title>
         <link>https://swc.rs/blog</link>
         <description>swc Blog</description>
-        <lastBuildDate>Wed, 29 Sep 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Oct 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Changelog: swc v1.2.92]]></title>
+            <link>https://swc.rs/blog/2021/10/03/swc-1.2.93</link>
+            <guid>Changelog: swc v1.2.92</guid>
+            <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/194?closed=1]]></description>
+        </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.92]]></title>
             <link>https://swc.rs/blog/2021/09/29/swc-1.2.92</link>
@@ -757,18 +764,18 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.1.32]]></title>
-            <link>https://swc.rs/blog/2020/03/04/swc-1.1.32</link>
-            <guid>Changelog: swc v1.1.32</guid>
-            <pubDate>Wed, 04 Mar 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Performance]]></description>
-        </item>
-        <item>
             <title><![CDATA[Changelog: swc v1.1.33]]></title>
             <link>https://swc.rs/blog/2020/03/04/swc-1.1.33</link>
             <guid>Changelog: swc v1.1.33</guid>
             <pubDate>Wed, 04 Mar 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Hotfix]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Changelog: swc v1.1.32]]></title>
+            <link>https://swc.rs/blog/2020/03/04/swc-1.1.32</link>
+            <guid>Changelog: swc v1.1.32</guid>
+            <pubDate>Wed, 04 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Performance]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.1.31]]></title>
