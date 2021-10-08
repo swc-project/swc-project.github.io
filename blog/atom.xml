@@ -92,18 +92,18 @@
         <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/184?closed=1]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.2.81]]></title>
-        <id>Changelog: swc v1.2.81</id>
-        <link href="https://swc.rs/blog/2021/08/25/swc-1.2.81"/>
-        <updated>2021-08-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/182?closed=1]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.82]]></title>
         <id>Changelog: swc v1.2.82</id>
         <link href="https://swc.rs/blog/2021/08/25/swc-1.2.82"/>
         <updated>2021-08-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/183?closed=1]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.81]]></title>
+        <id>Changelog: swc v1.2.81</id>
+        <link href="https://swc.rs/blog/2021/08/25/swc-1.2.81"/>
+        <updated>2021-08-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/182?closed=1]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.80]]></title>
@@ -148,18 +148,18 @@
         <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/176?closed=1]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.2.72]]></title>
-        <id>Changelog: swc v1.2.72</id>
-        <link href="https://swc.rs/blog/2021/08/04/swc-1.2.72"/>
-        <updated>2021-08-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/171?closed=1]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.73]]></title>
         <id>Changelog: swc v1.2.73</id>
         <link href="https://swc.rs/blog/2021/08/04/swc-1.2.73"/>
         <updated>2021-08-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/174?closed=1]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.72]]></title>
+        <id>Changelog: swc v1.2.72</id>
+        <link href="https://swc.rs/blog/2021/08/04/swc-1.2.72"/>
+        <updated>2021-08-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/171?closed=1]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.71]]></title>
@@ -491,16 +491,16 @@
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.2.17]]></title>
-        <id>Changelog: swc v1.2.17</id>
-        <link href="https://swc.rs/blog/2020/08/10/swc-1.2.17"/>
+        <title type="html"><![CDATA[Changelog: swc v1.2.16]]></title>
+        <id>Changelog: swc v1.2.16</id>
+        <link href="https://swc.rs/blog/2020/08/10/swc-1.2.16"/>
         <updated>2020-08-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.2.16]]></title>
-        <id>Changelog: swc v1.2.16</id>
-        <link href="https://swc.rs/blog/2020/08/10/swc-1.2.16"/>
+        <title type="html"><![CDATA[Changelog: swc v1.2.17]]></title>
+        <id>Changelog: swc v1.2.17</id>
+        <link href="https://swc.rs/blog/2020/08/10/swc-1.2.17"/>
         <updated>2020-08-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
@@ -841,6 +841,13 @@
         <summary type="html"><![CDATA[swc is fast. Very fast. It's 18x faster than babel on a single-core benchmark, and on a parallel benchmark, it's 68x faster than babel on a 4 core (8 HT) machine. Why? Just because it's written in rust? No. Its fundamental design differs from any other tool.]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.1.22]]></title>
+        <id>Changelog: swc v1.1.22</id>
+        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.22"/>
+        <updated>2020-02-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Improvements]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.21]]></title>
         <id>Changelog: swc v1.1.21</id>
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.21"/>
@@ -853,13 +860,6 @@
         <link href="https://swc.rs/blog/2020/02/13/swc-1.1.23"/>
         <updated>2020-02-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hotfix - optimizer]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.22]]></title>
-        <id>Changelog: swc v1.1.22</id>
-        <link href="https://swc.rs/blog/2020/02/13/swc-1.1.22"/>
-        <updated>2020-02-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Improvements]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.24]]></title>
