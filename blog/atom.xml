@@ -8,15 +8,15 @@
     <subtitle>swc Blog</subtitle>
     <icon>https://swc.rs/img/favicon.png</icon>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.2.92]]></title>
-        <id>Changelog: swc v1.2.92</id>
+        <title type="html"><![CDATA[Changelog: swc v1.2.94]]></title>
+        <id>Changelog: swc v1.2.94</id>
         <link href="https://swc.rs/blog/2021/10/08/swc-1.2.94"/>
         <updated>2021-10-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/195?closed=1]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.2.92]]></title>
-        <id>Changelog: swc v1.2.92</id>
+        <title type="html"><![CDATA[Changelog: swc v1.2.93]]></title>
+        <id>Changelog: swc v1.2.93</id>
         <link href="https://swc.rs/blog/2021/10/03/swc-1.2.93"/>
         <updated>2021-10-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/194?closed=1]]></summary>
@@ -680,16 +680,16 @@
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.44]]></title>
-        <id>Changelog: swc v1.1.44</id>
-        <link href="https://swc.rs/blog/2020/05/19/swc-1.1.44"/>
+        <title type="html"><![CDATA[Changelog: swc v1.1.45]]></title>
+        <id>Changelog: swc v1.1.45</id>
+        <link href="https://swc.rs/blog/2020/05/19/swc-1.1.45"/>
         <updated>2020-05-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.45]]></title>
-        <id>Changelog: swc v1.1.45</id>
-        <link href="https://swc.rs/blog/2020/05/19/swc-1.1.45"/>
+        <title type="html"><![CDATA[Changelog: swc v1.1.44]]></title>
+        <id>Changelog: swc v1.1.44</id>
+        <link href="https://swc.rs/blog/2020/05/19/swc-1.1.44"/>
         <updated>2020-05-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>

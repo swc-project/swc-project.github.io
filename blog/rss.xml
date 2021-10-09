@@ -8,16 +8,16 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Changelog: swc v1.2.92]]></title>
+            <title><![CDATA[Changelog: swc v1.2.94]]></title>
             <link>https://swc.rs/blog/2021/10/08/swc-1.2.94</link>
-            <guid>Changelog: swc v1.2.92</guid>
+            <guid>Changelog: swc v1.2.94</guid>
             <pubDate>Fri, 08 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/195?closed=1]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.2.92]]></title>
+            <title><![CDATA[Changelog: swc v1.2.93]]></title>
             <link>https://swc.rs/blog/2021/10/03/swc-1.2.93</link>
-            <guid>Changelog: swc v1.2.92</guid>
+            <guid>Changelog: swc v1.2.93</guid>
             <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/194?closed=1]]></description>
         </item>
@@ -680,16 +680,16 @@
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.1.44]]></title>
-            <link>https://swc.rs/blog/2020/05/19/swc-1.1.44</link>
-            <guid>Changelog: swc v1.1.44</guid>
+            <title><![CDATA[Changelog: swc v1.1.45]]></title>
+            <link>https://swc.rs/blog/2020/05/19/swc-1.1.45</link>
+            <guid>Changelog: swc v1.1.45</guid>
             <pubDate>Tue, 19 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.1.45]]></title>
-            <link>https://swc.rs/blog/2020/05/19/swc-1.1.45</link>
-            <guid>Changelog: swc v1.1.45</guid>
+            <title><![CDATA[Changelog: swc v1.1.44]]></title>
+            <link>https://swc.rs/blog/2020/05/19/swc-1.1.44</link>
+            <guid>Changelog: swc v1.1.44</guid>
             <pubDate>Tue, 19 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Bugfixes]]></description>
         </item>
