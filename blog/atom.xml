@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swc.rs/blog</id>
     <title>swc Blog</title>
-    <updated>2021-10-21T00:00:00.000Z</updated>
+    <updated>2021-10-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swc.rs/blog"/>
     <subtitle>swc Blog</subtitle>
     <icon>https://swc.rs/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.2.103]]></title>
+        <id>Changelog: swc v1.2.103</id>
+        <link href="https://swc.rs/blog/2021/10/25/swc-1.2.103"/>
+        <updated>2021-10-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/204?closed=1]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.2.102]]></title>
         <id>Changelog: swc v1.2.102</id>
@@ -827,18 +834,18 @@
         <summary type="html"><![CDATA[Bugfixes]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Changelog: swc v1.1.33]]></title>
-        <id>Changelog: swc v1.1.33</id>
-        <link href="https://swc.rs/blog/2020/03/04/swc-1.1.33"/>
-        <updated>2020-03-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Hotfix]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.32]]></title>
         <id>Changelog: swc v1.1.32</id>
         <link href="https://swc.rs/blog/2020/03/04/swc-1.1.32"/>
         <updated>2020-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Performance]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelog: swc v1.1.33]]></title>
+        <id>Changelog: swc v1.1.33</id>
+        <link href="https://swc.rs/blog/2020/03/04/swc-1.1.33"/>
+        <updated>2020-03-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hotfix]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Changelog: swc v1.1.31]]></title>
