@@ -155,18 +155,18 @@
             <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/184?closed=1]]></description>
         </item>
         <item>
-            <title><![CDATA[Changelog: swc v1.2.82]]></title>
-            <link>https://swc.rs/blog/2021/08/25/swc-1.2.82</link>
-            <guid>Changelog: swc v1.2.82</guid>
-            <pubDate>Wed, 25 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/183?closed=1]]></description>
-        </item>
-        <item>
             <title><![CDATA[Changelog: swc v1.2.81]]></title>
             <link>https://swc.rs/blog/2021/08/25/swc-1.2.81</link>
             <guid>Changelog: swc v1.2.81</guid>
             <pubDate>Wed, 25 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/182?closed=1]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Changelog: swc v1.2.82]]></title>
+            <link>https://swc.rs/blog/2021/08/25/swc-1.2.82</link>
+            <guid>Changelog: swc v1.2.82</guid>
+            <pubDate>Wed, 25 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[To see full list of patches, please visit https://github.com/swc-project/swc/milestone/183?closed=1]]></description>
         </item>
         <item>
             <title><![CDATA[Changelog: swc v1.2.80]]></title>
